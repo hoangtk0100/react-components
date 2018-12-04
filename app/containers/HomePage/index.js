@@ -11,7 +11,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Tabs } from '../../components/core';
+import { Button, Tabs, Icon } from '../../components/core';
 
 const Wrapper = styled.div`
   display: flex;
@@ -63,6 +63,7 @@ export default class HomePage extends React.PureComponent {
               <p>haha</p>
               <p>haha</p>
               <p>haha</p>
+              <Icon icon="atom" />
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About">
               Tab2
