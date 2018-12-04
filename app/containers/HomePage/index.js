@@ -19,6 +19,10 @@ const Wrapper = styled.div`
   margin: auto;
   justify-content: center;
   align-items: center;
+
+  > * {
+    margin: 0.25em;
+  }
 `;
 
 /* eslint-disable react/prefer-stateless-function */
@@ -45,6 +49,9 @@ export default class HomePage extends React.PureComponent {
             <Button>Button</Button>
             <Button>Button</Button>
           </Button.Group>
+          <Button.Group size="small" color="primary">
+            <Button>Button</Button>
+          </Button.Group>
         </Wrapper>
         <Wrapper>
           <Tabs
@@ -62,6 +69,9 @@ export default class HomePage extends React.PureComponent {
             </Tabs.Tab>
             <Tabs.Tab tab="tab-3" title="Contact">
               Tab3
+            </Tabs.Tab>
+            <Tabs.Tab tab="tab-4" title="About" disabled>
+              Tab4
             </Tabs.Tab>
           </Tabs>
         </Wrapper>

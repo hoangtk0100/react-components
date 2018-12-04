@@ -1,1 +1,21 @@
 @import '../../style/variables.scss';
+
+.rc-button-group {
+  display: inline-flex;
+  
+  > .rc-button {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    &:first-child {
+      border-top-left-radius: 0.25em;
+      border-bottom-left-radius: 0.25em;
+    }
+
+    &:last-child {
+      border-top-right-radius: 0.25em;
+      border-bottom-right-radius: 0.25em;
+    }
+  }
+}

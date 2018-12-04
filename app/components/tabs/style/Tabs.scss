@@ -4,6 +4,7 @@
   font-size: 1rem;
   display: flex;
   flex-flow: column nowrap;
+  width: 100%;
 }
 
 .rc-tabs__navigation {
@@ -35,17 +36,10 @@
   padding: 0 1em;
   height: 100%;
   background-color: transparent;
+  color: $text-color;
   cursor: pointer;
 
-  &:first-child {
-    border-top-left-radius: 0.5em;
-  }
-
-  &:last-child {
-    border-top-right-radius: 0.5em;
-  }
-
-  &:hover {
+  &:hover:not(&--disabled) {
     color: $primary;
   }
 }
@@ -56,4 +50,9 @@
   font-weight: 500;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
+}
+
+.rc-tab--disabled {
+  color: $text-color-disabled;
+  cursor: not-allowed;
 }

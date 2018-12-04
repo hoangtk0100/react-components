@@ -1,1 +1,49 @@
 @import '../../style/variables.scss';
+
+.rc-button {
+  font-size: 1rem;
+  user-select: none;
+  touch-action: manipulation;
+  outline: none;
+  border: 0.0625em solid $gray-border;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25em;
+  height: 1.75em;
+  padding: 0 0.5em;
+  color: $text-color;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $text-color-disabled;
+    border-color: $gray-border;
+    background-color: $gray-disabled;
+  }
+}
+
+.rc-button--primary {
+  background-color: $primary;
+  color: white;
+  border-color: $primary;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
+
+  &:focus:not(:disabled) {
+    background-color: $primary-focus;
+    border-color: $primary-focus;
+  }
+}
+
+.rc-button--small {
+  font-size: 0.75em;
+}
+
+.rc-button--large {
+  font-size: 1.25em;
+}

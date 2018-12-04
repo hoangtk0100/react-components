@@ -11,9 +11,6 @@ const sizes = Object.freeze({
 });
 const colors = Object.freeze({
   primary: 'rc-button--primary',
-  error: 'rc-button--error',
-  success: 'rc-button--success',
-  warning: 'rc-button--warning',
 });
 const types = Object.freeze({
   ghost: 'rc-button--ghost',
@@ -44,7 +41,7 @@ const Button = ({
     {...otherProps}
     type={htmlTypes[htmlType]}
     className={cn(
-      'rc-btn',
+      'rc-button',
       sizes[size],
       colors[color],
       types[type],

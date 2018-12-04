@@ -26,10 +26,16 @@ class Tabs extends React.PureComponent {
     }
   }
 
-  handleClick = (event, activeTab) =>
-    this.isControlled
-      ? this.props.onChange(event, activeTab)
-      : this.setState({ activeTab });
+  handleClick = (event, elm) => {
+    const { disabled, tab } = elm.props;
+    if (disabled) {
+      return null;
+    }
+
+    return this.isControlled
+      ? this.props.onChange(event, tab)
+      : this.setState({ activeTab: tab });
+  };
 
   render() {
     const { className, children } = this.props;
@@ -47,8 +53,9 @@ class Tabs extends React.PureComponent {
               <li
                 className={cn('rc-tab', {
                   'rc-tab--active': elm.props.tab === activeTab,
+                  'rc-tab--disabled': elm.props.disabled,
                 })}
-                onClick={event => this.handleClick(event, elm.props.tab)}
+                onClick={event => this.handleClick(event, elm)}
               >
                 {elm.props.title}
               </li>

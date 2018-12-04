@@ -12,6 +12,7 @@ Tab.propTypes = {
   tab: PropTypes.string.isRequired,
   title: PropTypes.any,
   refresh: PropTypes.bool,
+  disabled: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.any,
 };
