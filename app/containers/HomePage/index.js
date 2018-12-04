@@ -52,7 +52,10 @@ export default class HomePage extends React.PureComponent {
             onChange={(event, tab) => this.setState({ activeTab: tab })}
           >
             <Tabs.Tab tab="tab-1" title="Home">
-              Tab1
+              <p>haha</p>
+              <p>haha</p>
+              <p>haha</p>
+              <p>haha</p>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About">
               Tab2

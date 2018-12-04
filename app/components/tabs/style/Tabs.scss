@@ -2,6 +2,8 @@
 
 .rc-tabs {
   font-size: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .rc-tabs__navigation {
@@ -23,7 +25,7 @@
 }
 
 .rc-tabs__content--active {
-  display: flex;
+  display: block;
 }
 
 .rc-tab {
