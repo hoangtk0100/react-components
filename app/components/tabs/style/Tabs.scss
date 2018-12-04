@@ -42,6 +42,11 @@
   &:hover:not(&--disabled) {
     color: $primary;
   }
+
+  > .rc-icon + span,
+  > span + .rc-icon {
+    margin-left: 0.5em;
+  }
 }
 
 .rc-tab--active {

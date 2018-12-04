@@ -64,20 +64,32 @@ export default class HomePage extends React.PureComponent {
             activeTab={this.state.activeTab}
             onChange={(event, tab) => this.setState({ activeTab: tab })}
           >
-            <Tabs.Tab tab="tab-1" title="Home">
+            <Tabs.Tab tab="tab-1" title="Home" icon={<Icon icon="atom" />}>
               <p>haha</p>
               <p>haha</p>
               <p>haha</p>
               <p>haha</p>
               <Icon icon="atom" />
             </Tabs.Tab>
-            <Tabs.Tab tab="tab-2" title="About">
+            <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
               Tab2
             </Tabs.Tab>
-            <Tabs.Tab tab="tab-3" title="Contact">
+            <Tabs.Tab
+              tab="tab-3"
+              title="Contact"
+              icon={<Icon icon="address-book" />}
+            >
               Tab3
             </Tabs.Tab>
-            <Tabs.Tab tab="tab-4" title="About" disabled>
+            <Tabs.Tab tab="tab-s" icon={<Icon icon="address-book" />}>
+              Tabs
+            </Tabs.Tab>
+            <Tabs.Tab
+              tab="tab-4"
+              title="About"
+              disabled
+              icon={<Icon icon="barcode" />}
+            >
               Tab4
             </Tabs.Tab>
           </Tabs>

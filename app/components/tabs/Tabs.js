@@ -57,7 +57,12 @@ class Tabs extends React.PureComponent {
                 })}
                 onClick={event => this.handleClick(event, elm)}
               >
-                {elm.props.title}
+                {elm.props.icon}
+                {typeof elm.props.title === 'string' ? (
+                  <span>{elm.props.title}</span>
+                ) : (
+                  elm.props.title
+                )}
               </li>
             );
           })}

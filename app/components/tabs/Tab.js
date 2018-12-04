@@ -9,8 +9,9 @@ const Tab = ({ className, children }) => (
 
 Tab.displayName = 'Tab';
 Tab.propTypes = {
+  icon: PropTypes.node,
   tab: PropTypes.string.isRequired,
-  title: PropTypes.any,
+  title: PropTypes.string,
   refresh: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
