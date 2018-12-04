@@ -22,6 +22,11 @@
     border-color: $gray-border;
     background-color: $gray-disabled;
   }
+
+  > .rc-icon + span,
+  > span + .rc-icon {
+    margin-left: 0.5em;
+  }
 }
 
 .rc-button--primary {

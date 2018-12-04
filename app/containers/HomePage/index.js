@@ -34,15 +34,21 @@ export default class HomePage extends React.PureComponent {
       <React.Fragment>
         <Wrapper>
           <Button>Button</Button>
-          <Button color="primary">Primary Button</Button>
-          <Button disabled color="primary">
+          <Button color="primary">
+            <Icon icon="atom" />
             Primary Button
+            <Icon icon="atom" />
+          </Button>
+          <Button disabled color="primary">
+            <Icon icon="atom" />
           </Button>
           <Button size="large" color="primary">
+            <Icon icon="atom" />
             Large Primary
           </Button>
           <Button size="small" color="primary">
             Small Primary
+            <Icon icon="atom" />
           </Button>
           <Button.Group size="small" color="primary">
             <Button>Button</Button>
