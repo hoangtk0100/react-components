@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import { Button, Tabs, Icon } from '../../components/core';
 
 const Wrapper = styled.div`
+  padding: 8px;
   display: flex;
   flex-flow: column;
   margin: auto;
@@ -33,43 +34,44 @@ export default class HomePage extends React.PureComponent {
     return (
       <React.Fragment>
         <Wrapper>
-          <Button>Button</Button>
-          <Button color="primary">
-            <Icon icon="atom" />
-            Primary Button
-            <Icon icon="atom" />
-          </Button>
-          <Button disabled color="primary">
-            <Icon icon="atom" />
-          </Button>
-          <Button size="large" color="primary">
-            <Icon icon="atom" />
-            Large Primary
-          </Button>
-          <Button size="small" color="primary">
-            Small Primary
-            <Icon icon="atom" />
-          </Button>
-          <Button.Group size="small" color="primary">
-            <Button>Button</Button>
-            <Button>Button</Button>
-            <Button>Button</Button>
-          </Button.Group>
-          <Button.Group size="small" color="primary">
-            <Button>Button</Button>
-          </Button.Group>
-        </Wrapper>
-        <Wrapper>
           <Tabs
             activeTab={this.state.activeTab}
             onChange={(event, tab) => this.setState({ activeTab: tab })}
           >
-            <Tabs.Tab tab="tab-1" title="Home" icon={<Icon icon="atom" />}>
-              <p>haha</p>
-              <p>haha</p>
-              <p>haha</p>
-              <p>haha</p>
-              <Icon icon="atom" />
+            <Tabs.Tab tab="tab-1" title="Button">
+              <Wrapper>
+                <Button>Button</Button>
+                <Button color="primary">
+                  <Icon icon="atom" />
+                  Primary Button
+                  <Icon icon="atom" />
+                </Button>
+                <Button disabled color="primary">
+                  <Icon icon="atom" />
+                </Button>
+                <Button size="large" color="primary">
+                  <Icon icon="atom" />
+                  Large Primary
+                </Button>
+                <Button size="small" color="primary">
+                  Small Primary
+                  <Icon icon="atom" />
+                </Button>
+                <Button.Group size="small" color="primary">
+                  <Button>
+                    <Icon icon="atom" />
+                    Button
+                  </Button>
+                  <Button>
+                    Button
+                    <Icon icon="atom" />
+                  </Button>
+                  <Button>Button</Button>
+                </Button.Group>
+                <Button.Group size="large" color="primary">
+                  <Button>Button</Button>
+                </Button.Group>
+              </Wrapper>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
               Tab2
