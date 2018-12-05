@@ -8,8 +8,8 @@ import cn from 'classnames';
 import './style/Icon.scss';
 
 const sizes = {
-  small: 'rc-icon--sm',
-  large: 'rc-icon--lg',
+  small: 'rc-icon--small',
+  large: 'rc-icon--large',
 };
 
 const Icon = ({ className, size, icon, ...otherProps }) => (
