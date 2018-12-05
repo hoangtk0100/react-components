@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import './style/PureModal.scss';
 
-import Icon from '../icon';
+import Icon from '../Icon';
 
 const sizes = Object.freeze({
   small: 'rc-modal--small',

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Portal from '../portal';
+import Portal from '../Portal';
 import PureModal from './PureModal';
 import { canUseDOM } from '../utils';
 
 import './style/Modal.scss';
-import Button from '../button';
+import Button from '../Button';
 
 let nodeRender = null;
 
