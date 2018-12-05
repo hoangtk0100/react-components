@@ -1,0 +1,39 @@
+@import '../../style/variables.scss';
+
+.rc-row {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.rc-row--align-start {
+  align-items: flex-start;
+}
+
+.rc-row--align-end {
+  align-items: flex-end;
+}
+
+.rc-row--align-center {
+  align-items: center;
+}
+
+.rc-row--justify-start {
+  justify-content: flex-start;
+}
+
+.rc-row--justify-end {
+  justify-content: flex-end;
+}
+
+.rc-row--justify-center {
+  justify-content: center;
+}
+
+.rc-row--justify-around {
+  justify-content: space-around;
+}
+
+.rc-row--justify-between {
+  justify-content: space-between;
+}

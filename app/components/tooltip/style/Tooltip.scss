@@ -1,0 +1,22 @@
+.rc-tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.rc-tooltip__title {
+  position: absolute;
+  max-width: 5em;
+  display: none;
+  min-height: 2em;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 0.25em;
+}
+
+.rc-tooltip__content {
+  &:hover + .rc-tooltip__title {
+    display: flex;
+  }
+}

@@ -11,7 +11,15 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Tabs, Icon } from '../../components/core';
+import {
+  Button,
+  Tabs,
+  Icon,
+  Row,
+  Col,
+  Tooltip,
+  Switch,
+} from '../../components/core';
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -28,7 +36,7 @@ const Wrapper = styled.div`
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-1' };
+  state = { activeTab: 'tab-2' };
 
   render() {
     return (
@@ -74,17 +82,27 @@ export default class HomePage extends React.PureComponent {
               </Wrapper>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
-              Tab2
+              <Row>
+                <Col>Col 1</Col>
+                <Col>Col 2</Col>
+                <Col>Col 3</Col>
+              </Row>
             </Tabs.Tab>
             <Tabs.Tab
               tab="tab-3"
               title="Contact"
               icon={<Icon icon="address-book" />}
             >
-              Tab3
+              <Tooltip title="This is a tooltip">
+                <Button>Tooltip</Button>
+              </Tooltip>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-s" icon={<Icon icon="address-book" />}>
-              Tabs
+              <Switch />
+              <Switch
+                checked={!!this.state.checked}
+                onChange={e => this.setState({ checked: e.target.checked })}
+              />
             </Tabs.Tab>
             <Tabs.Tab
               tab="tab-4"
