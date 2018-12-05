@@ -79,6 +79,11 @@ export default class HomePage extends React.PureComponent {
                 <Button.Group size="large" color="primary">
                   <Button>Button</Button>
                 </Button.Group>
+                <Switch />
+                <Switch
+                  checked={!!this.state.checked}
+                  onChange={e => this.setState({ checked: e.target.checked })}
+                />
               </Wrapper>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
@@ -97,13 +102,7 @@ export default class HomePage extends React.PureComponent {
                 <Button>Tooltip</Button>
               </Tooltip>
             </Tabs.Tab>
-            <Tabs.Tab tab="tab-s" icon={<Icon icon="address-book" />}>
-              <Switch />
-              <Switch
-                checked={!!this.state.checked}
-                onChange={e => this.setState({ checked: e.target.checked })}
-              />
-            </Tabs.Tab>
+            <Tabs.Tab tab="tab-s" icon={<Icon icon="address-book" />} />
             <Tabs.Tab
               tab="tab-4"
               title="About"

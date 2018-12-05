@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import './components/style/index.scss';
+
 const GlobalStyle = createGlobalStyle`
   html,
   body {
