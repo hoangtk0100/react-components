@@ -89,7 +89,10 @@ export default class HomePage extends React.PureComponent {
                 <Button.Group size="large" color="primary">
                   <Button>Button</Button>
                 </Button.Group>
-                <Switch />
+                <Switch size="small" />
+                <Switch size="small" disabled />
+                <Switch size="small" checked disabled />
+                <Switch size="large" />
                 <Switch
                   checked={!!this.state.checked}
                   onChange={e => this.setState({ checked: e.target.checked })}

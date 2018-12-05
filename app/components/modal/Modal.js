@@ -7,10 +7,10 @@ import Portal from '../Portal';
 import PureModal from './PureModal';
 import Button from '../Button';
 import { canUseDOM } from '../utils';
+
 import './style/Modal.scss';
 
 let nodeRender = null;
-
 if (canUseDOM) {
   nodeRender = document.getElementsByTagName('body')[0]; // eslint-disable-line prefer-destructuring
 }
@@ -62,14 +62,16 @@ class Modal extends React.PureComponent {
       open,
       defaultOpen,
       cancelText,
-      OKText,
+      okText,
       propsCancel,
       propsOK,
+      hideCancel,
+      hideOK,
       ...otherProps
     } = this.props;
 
-    const cnCancel = propsCancel.className;
-    const otherPropsCancel = fp.omit('className')(propsCancel);
+    const cnOK = propsOK.className;
+    const otherPropsOK = fp.omit('className')(propsOK);
 
     return (
       <Portal node={nodeRender}>
@@ -83,20 +85,21 @@ class Modal extends React.PureComponent {
                 footer
               ) : (
                 <span className="flex justify-end">
-                  <Button
-                    className={cn('mr-1', cnCancel)}
-                    onClick={this.handleLocalClose}
-                    {...otherPropsCancel}
-                  >
-                    {cancelText}
-                  </Button>
-                  <Button
-                    color="primary"
-                    onClick={this.handleLocalOK}
-                    {...propsOK}
-                  >
-                    {OKText}
-                  </Button>
+                  {!hideCancel && (
+                    <Button onClick={this.handleLocalClose} {...propsCancel}>
+                      {cancelText}
+                    </Button>
+                  )}
+                  {!hideOK && (
+                    <Button
+                      className={cn('ml-1', cnOK)}
+                      color="primary"
+                      onClick={this.handleLocalOK}
+                      {...otherPropsOK}
+                    >
+                      {okText}
+                    </Button>
+                  )}
                 </span>
               )
             }
@@ -110,7 +113,9 @@ class Modal extends React.PureComponent {
 Modal.displayName = 'Modal';
 Modal.propTypes = {
   cancelText: PropTypes.string,
-  OKText: PropTypes.string,
+  okText: PropTypes.string,
+  hideCancel: PropTypes.bool,
+  hideOK: PropTypes.bool,
   onClose: PropTypes.func,
   onOK: PropTypes.func,
   propsCancel: PropTypes.object,
@@ -119,7 +124,7 @@ Modal.propTypes = {
 };
 Modal.defaultProps = {
   cancelText: 'Cancel',
-  OKText: 'OK',
+  okText: 'OK',
   propsCancel: {},
   propsOK: {},
   onClose: f => f,

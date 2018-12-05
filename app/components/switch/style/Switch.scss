@@ -1,11 +1,19 @@
 @import '../../style/variables.scss';
 
 .rc-switch {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   position: relative;
   display: inline-flex;
   width: 4em;
   height: 2em;
+}
+
+.rc-switch--small {
+  font-size: 0.5rem;
+}
+
+.rc-switch--large {
+  font-size: 0.75rem;
 }
 
 .rc-switch__slider {
@@ -38,5 +46,9 @@
     &:before {
       transform: translateX(100%);
     }
+  }
+
+  &:disabled + .rc-switch__slider {
+    cursor: not-allowed;
   }
 }
