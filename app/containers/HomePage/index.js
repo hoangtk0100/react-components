@@ -15,8 +15,7 @@ import {
   Button,
   Tabs,
   Icon,
-  Row,
-  Col,
+  Grid,
   Tooltip,
   Switch,
   Modal,
@@ -100,11 +99,11 @@ export default class HomePage extends React.PureComponent {
               </Wrapper>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
-              <Row>
-                <Col>Col 1</Col>
-                <Col>Col 2</Col>
-                <Col>Col 3</Col>
-              </Row>
+              <Grid row>
+                <Grid row span="1/3">Grid 1</Grid>
+                <Grid row span="1/3">Grid 2</Grid>
+                <Grid row span="1/3">Grid 3</Grid>
+              </Grid>
             </Tabs.Tab>
             <Tabs.Tab
               tab="tab-3"
