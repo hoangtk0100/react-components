@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { canUseDOM } from './utils';
+import { canUseDOM } from '../utils';
 
 class Portal extends React.Component {
   componentWillUnmount() {

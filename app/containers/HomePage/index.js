@@ -19,6 +19,7 @@ import {
   Col,
   Tooltip,
   Switch,
+  Modal,
 } from '../../components/core';
 
 const Wrapper = styled.div`
@@ -36,11 +37,18 @@ const Wrapper = styled.div`
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-2' };
+  state = { activeTab: 'tab-2', open: true };
 
   render() {
     return (
       <React.Fragment>
+        <Modal
+          header="This is a header!"
+          open={this.state.open}
+          onClose={() => this.setState({ open: false })}
+        >
+          <p>This is a content!</p>
+        </Modal>
         <Wrapper>
           <Tabs
             activeTab={this.state.activeTab}
@@ -48,7 +56,9 @@ export default class HomePage extends React.PureComponent {
           >
             <Tabs.Tab tab="tab-1" title="Button">
               <Wrapper>
-                <Button>Button</Button>
+                <Button onClick={() => this.setState({ open: true })}>
+                  Open Modal
+                </Button>
                 <Button color="primary">
                   <Icon icon="atom" />
                   Primary Button

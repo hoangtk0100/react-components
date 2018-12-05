@@ -46,6 +46,7 @@ const Button = ({
       colors[color],
       types[type],
       shapes[shape],
+      className,
     )}
     disabled={disabled}
     ref={buttonRef}
