@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
+import fp from 'lodash/fp';
+
 import Portal from '../Portal';
 import PureModal from './PureModal';
-import { canUseDOM } from '../utils';
-
-import './style/Modal.scss';
 import Button from '../Button';
+import { canUseDOM } from '../utils';
+import './style/Modal.scss';
 
 let nodeRender = null;
 
@@ -47,7 +49,13 @@ class Modal extends React.PureComponent {
   };
 
   render() {
+    if (!canUseDOM || !this.state.localOpen) {
+      return null;
+    }
+
+    const isHasFooter = 'footer' in this.props;
     const {
+      header,
       footer,
       onClose,
       onOK,
@@ -55,31 +63,43 @@ class Modal extends React.PureComponent {
       defaultOpen,
       cancelText,
       OKText,
+      propsCancel,
+      propsOK,
       ...otherProps
     } = this.props;
 
-    if (!this.state.localOpen) {
-      return null;
-    }
-
-    const defaultFooter = (
-      <span className="flex justify-end">
-        <Button className="mr-1" onClick={this.handleLocalClose}>
-          {cancelText}
-        </Button>
-        <Button color="primary" onClick={this.handleLocalOK}>
-          {OKText}
-        </Button>
-      </span>
-    );
+    const cnCancel = propsCancel.className;
+    const otherPropsCancel = fp.omit('className')(propsCancel);
 
     return (
       <Portal node={nodeRender}>
         <div className="rc-wrapped-modal">
           <PureModal
             {...otherProps}
+            header={header}
             onClose={onClose}
-            footer={footer || defaultFooter}
+            footer={
+              isHasFooter ? (
+                footer
+              ) : (
+                <span className="flex justify-end">
+                  <Button
+                    className={cn('mr-1', cnCancel)}
+                    onClick={this.handleLocalClose}
+                    {...otherPropsCancel}
+                  >
+                    {cancelText}
+                  </Button>
+                  <Button
+                    color="primary"
+                    onClick={this.handleLocalOK}
+                    {...propsOK}
+                  >
+                    {OKText}
+                  </Button>
+                </span>
+              )
+            }
           />
         </div>
       </Portal>
@@ -93,11 +113,15 @@ Modal.propTypes = {
   OKText: PropTypes.string,
   onClose: PropTypes.func,
   onOK: PropTypes.func,
+  propsCancel: PropTypes.object,
+  propsOK: PropTypes.object,
   footer: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
 };
 Modal.defaultProps = {
   cancelText: 'Cancel',
   OKText: 'OK',
+  propsCancel: {},
+  propsOK: {},
   onClose: f => f,
   onOK: f => f,
 };

@@ -4,8 +4,6 @@ import cn from 'classnames';
 
 import './style/PureModal.scss';
 
-import Icon from '../Icon';
-
 const sizes = Object.freeze({
   small: 'rc-modal--small',
   large: 'rc-modal--large',
@@ -18,39 +16,23 @@ const colors = Object.freeze({
   success: 'rc-modal--success',
 });
 
-const PureModal = ({
-  className,
-  size,
-  color,
-  closable,
-  header,
-  footer,
-  children,
-  onClose,
-}) => (
+const PureModal = ({ className, size, color, header, footer, children }) => (
   <div className={cn('rc-modal', sizes[size], colors[color], className)}>
-    {closable && (
-      <Icon icon="times-circle" className="rc-modal__close" onClick={onClose} />
-    )}
-    <div className="rc-modal__header">{header}</div>
+    {header && <div className="rc-modal__header">{header}</div>}
     <div className="rc-modal__content">{children}</div>
-    <div className="rc-modal__footer">{footer}</div>
+    {footer && <div className="rc-modal__footer">{footer}</div>}
   </div>
 );
 
 PureModal.displayName = 'PureModal';
 PureModal.propTypes = {
   className: PropTypes.string,
-  onClose: PropTypes.func,
-  closable: PropTypes.bool,
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.oneOf(Object.keys(colors)),
   header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   footer: PropTypes.node,
   children: PropTypes.node,
 };
-PureModal.defaultProps = {
-  onClose: f => f,
-};
+PureModal.defaultProps = {};
 
 export default PureModal;
