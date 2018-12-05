@@ -100,9 +100,15 @@ export default class HomePage extends React.PureComponent {
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
               <Grid row>
-                <Grid row span="1/3">Grid 1</Grid>
-                <Grid row span="1/3">Grid 2</Grid>
-                <Grid row span="1/3">Grid 3</Grid>
+                <Grid row span="1/3">
+                  Grid 1
+                </Grid>
+                <Grid row span="1/3">
+                  Grid 2
+                </Grid>
+                <Grid row span="1/3">
+                  Grid 3
+                </Grid>
               </Grid>
             </Tabs.Tab>
             <Tabs.Tab

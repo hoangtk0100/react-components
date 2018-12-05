@@ -6,7 +6,6 @@ import cn from 'classnames';
 import '../style/utilities/flexbox';
 import '../style/utilities/spacing.scss';
 import '../style/utilities/sizing/width.scss';
-
 import './style/Grid.scss';
 
 const getDirection = ({ row, col, reverse }) =>
@@ -96,6 +95,7 @@ const spans = Object.freeze({
   '5/12': 'w-5/12',
   '7/12': 'w-7/12',
   '11/12': 'w-11/12',
+  '12/12': 'w-12/12',
   full: 'w-full',
 });
 
