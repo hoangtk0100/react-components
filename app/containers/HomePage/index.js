@@ -118,7 +118,9 @@ export default class HomePage extends React.PureComponent {
             >
               <div>
                 <Tooltip title="This is a tooltip" placement="top">
-                  <span color="primary" size="small">Hover to show placement=top</span>
+                  <span color="primary" size="small">
+                    Hover to show placement=top
+                  </span>
                 </Tooltip>
               </div>
               <div>
