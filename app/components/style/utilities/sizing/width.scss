@@ -136,7 +136,7 @@
   width: 100vw;
 }
 
-@media only screen and (max-width: $query-sm-max) {
+@media (min-width: $query-sm) {
   .sm\:w-1 {
     width: 0.25rem;
   }
@@ -274,7 +274,7 @@
   }
 }
 
-@media only screen and (min-width: $query-md-min) and (max-width: $query-md-max) {
+@media (min-width: $query-md) {
   .md\:w-1 {
     width: 0.25rem;
   }
@@ -412,7 +412,7 @@
   }
 }
 
-@media only screen and (min-width: $query-lg-min) and (max-width: $query-lg-max) {
+@media (min-width: $query-lg) {
   .lg\:w-1 {
     width: 0.25rem;
   }
@@ -550,7 +550,7 @@
   }
 }
 
-@media only screen and (min-width: $query-xl-min) and (max-width: $query-xl-max) {
+@media (min-width: $query-xl) {
   .xl\:w-1 {
     width: 0.25rem;
   }

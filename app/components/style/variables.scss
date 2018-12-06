@@ -15,15 +15,8 @@ $box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.15);
 
 $z-index-modal: 1000;
 
-$query-sm-max: 767px;
-
-$query-md-min: 768px;
-$query-md-max: 991px;
-
-$query-lg-min: 992px;
-$query-lg-max: 1199px;
-
-$query-xl-min: 1200px;
-$query-xl-max: 1919px;
-
-$query-xxl-min: 1920px;
+$query-sm: 576px;
+$query-md: 768px;
+$query-lg: 992px;
+$query-xl: 1200px;
+$query-xxl: 1600px;

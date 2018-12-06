@@ -20,7 +20,7 @@
   justify-content: space-around;
 }
 
-@media only screen and (max-width: $query-sm-max) {
+@media (min-width: $query-sm) {
   .sm\:justify-start {
     justify-content: flex-start;
   }
@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (min-width: $query-md-min) and (max-width: $query-md-max) {
+@media (min-width: $query-md) {
   .md\:justify-start {
     justify-content: flex-start;
   }
@@ -66,7 +66,7 @@
 
 
 
-@media only screen and (min-width: $query-lg-min) and (max-width: $query-lg-max) {
+@media (min-width: $query-lg) {
   .lg\:justify-start {
     justify-content: flex-start;
   }
@@ -88,7 +88,7 @@
   }
 }
 
-@media only screen and (min-width: $query-xl-min) and (max-width: $query-xl-max) {
+@media (min-width: $query-xl) {
   .xl\:justify-start {
     justify-content: flex-start;
   }
