@@ -99,7 +99,7 @@ export default class HomePage extends React.PureComponent {
               </Wrapper>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-2" title="About" icon={<Icon icon="ad" />}>
-              <Grid row>
+              <Grid row xl={{ row: true, justify: 'around' }}>
                 <Grid row span="1/3">
                   Grid 1
                 </Grid>

@@ -8,11 +8,16 @@ import '../style/utilities/spacing.scss';
 import '../style/utilities/sizing/width.scss';
 import './style/Grid.scss';
 
-const getDirection = ({ row, col, reverse }) =>
-  'flex-'
+const getDirection = ({ row, col, reverse }) => {
+  if (!row && !col) {
+    return '';
+  }
+
+  return 'flex-'
     .concat(row ? 'row' : '')
     .concat(col ? 'col' : '')
     .concat(reverse ? '-reverse' : '');
+};
 
 const justifys = Object.freeze({
   start: 'justify-start',
@@ -124,10 +129,7 @@ const getResponsive = (
   },
   query,
 ) => {
-  let directionClass = '';
-  if (row || col || reverse) {
-    directionClass = getDirection({ row, col, reverse });
-  }
+  const directionClass = getDirection({ row, col, reverse });
 
   return cn(
     directionClass ? `${query}${directionClass}` : null,
