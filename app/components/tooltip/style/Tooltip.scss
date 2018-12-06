@@ -1,3 +1,5 @@
+$tooltip-bg-color: rgba(0, 0, 0, 0.75);
+
 .rc-tooltip {
   position: relative;
   display: inline-block;
@@ -5,18 +7,123 @@
 }
 
 .rc-tooltip__title {
+  pointer-events: none;
   position: absolute;
-  max-width: 5em;
-  display: none;
+  visibility: hidden;
+  display: flex;
+  z-index: 1;
+  max-width: 20em;
   min-height: 2em;
+  height: auto;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.45);
+  padding: 0 0.5em;
+  background-color: $tooltip-bg-color;
+  color: white;
   border-radius: 0.25em;
+
+  &:before {
+    position: absolute;
+    content: "";
+    border-width: 0.5em;
+    border-style: solid;
+  }
 }
 
 .rc-tooltip__content {
   &:hover + .rc-tooltip__title {
-    display: flex;
+    visibility: visible;
+  }
+}
+
+.rc-tooltip--top {
+  .rc-tooltip__title {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 0 0.5em 0;
+
+    &:before {
+      bottom: -100%;
+      left: 50%;
+      transform: translate(-50%, calc(-100%));
+      border-color: $tooltip-bg-color transparent transparent transparent;
+    }
+  }
+}
+
+.rc-tooltip--bottom {
+  .rc-tooltip__title {
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0.5em 0 0 0;
+
+    &:before {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 1em));
+      border-color: transparent transparent $tooltip-bg-color transparent;
+    }
+  }
+}
+
+.rc-tooltip--left {
+  .rc-tooltip__title {
+    &:before {
+      border-color: transparent transparent transparent $tooltip-bg-color;
+    }
+  }
+}
+
+.rc-tooltip--right {
+  .rc-tooltip__title {
+    &:before {
+      border-color: transparent transparent transparent $tooltip-bg-color;
+    }
+  }
+}
+
+.rc-tooltip--top-left,
+.rc-tooltip--left-top {
+  .rc-tooltip__title {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 0 0.5em 0;
+
+    &:before {
+      bottom: -100%;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 0.25em));
+      border-color: $tooltip-bg-color transparent transparent transparent;
+    }
+  }
+}
+
+.rc-tooltip--top-right,
+.rc-tooltip--right-top {
+  .rc-tooltip__title {
+    &:before {
+      border-color: transparent transparent transparent $tooltip-bg-color;
+    }
+  }
+}
+
+.rc-tooltip--bottom-right,
+.rc-tooltip--right-bottom {
+  .rc-tooltip__title {
+    &:before {
+      border-color: transparent transparent transparent $tooltip-bg-color;
+    }
+  }
+}
+
+.rc-tooltip--bottom-left,
+.rc-tooltip--left-bottom {
+  .rc-tooltip__title {
+    &:before {
+      border-color: transparent transparent transparent $tooltip-bg-color;
+    }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import fp from 'lodash/fp';
+import { omit, isBoolean } from 'lodash/fp';
 
 import Portal from '../Portal';
 import PureModal from './PureModal';
@@ -18,7 +18,7 @@ if (canUseDOM) {
 }
 
 class Modal extends React.PureComponent {
-  isControlled = typeof this.props.open === 'boolean';
+  isControlled = isBoolean(this.props.open);
 
   defaultOpenState = this.isControlled
     ? this.props.open
@@ -73,7 +73,7 @@ class Modal extends React.PureComponent {
     } = this.props;
 
     const cnOK = propsOK.className;
-    const otherPropsOK = fp.omit('className')(propsOK);
+    const otherPropsOK = omit('className')(propsOK);
 
     return (
       <Portal node={nodeRender}>

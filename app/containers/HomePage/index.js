@@ -116,9 +116,61 @@ export default class HomePage extends React.PureComponent {
               title="Contact"
               icon={<Icon icon="address-book" />}
             >
-              <Tooltip title="This is a tooltip">
-                <Button>Tooltip</Button>
-              </Tooltip>
+              <div>
+                <Tooltip title="This is a tooltip" placement="top">
+                  <span color="primary" size="small">Hover to show placement=top</span>
+                </Tooltip>
+              </div>
+              <div>
+                <Tooltip title="This is a tooltip" placement="bottom">
+                  <Button className="ml-1">
+                    Hover to show placement=bottom
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="left">
+                  <Button className="ml-1">Hover to show placement=left</Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+                <Tooltip title="This is a tooltip" placement="right">
+                  <Button className="ml-1">
+                    Hover to show placement=right
+                  </Button>
+                </Tooltip>
+              </div>
             </Tabs.Tab>
             <Tabs.Tab tab="tab-s" icon={<Icon icon="address-book" />} />
             <Tabs.Tab
