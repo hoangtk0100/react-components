@@ -32,7 +32,7 @@
   flex-shrink: 0;
 }
 
-@media (min-width: $query-sm) {
+@media only screen and (max-width: $query-sm-max) {
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
@@ -67,7 +67,7 @@
 }
 
 
-@media (min-width: $query-md) {
+@media only screen and (min-width: $query-md-min) and (max-width: $query-md-max) {
   .md\:flex-1 {
     flex: 1 1 0%;
   }
@@ -101,7 +101,7 @@
   }
 }
 
-@media (min-width: $query-lg) {
+@media only screen and (min-width: $query-lg-min) and (max-width: $query-lg-max) {
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
@@ -135,7 +135,7 @@
   }
 }
 
-@media (min-width: $query-xl) {
+@media only screen and (min-width: $query-xl-min) and (max-width: $query-xl-max) {
   .xl\:flex-1 {
     flex: 1 1 0%;
   }

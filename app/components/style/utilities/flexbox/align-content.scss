@@ -20,7 +20,7 @@
   align-content: space-around;
 }
 
-@media (min-width: $query-sm) {
+@media only screen and (max-width: $query-sm-max) {
   .sm\:content-center {
     align-content: center;
   }
@@ -43,7 +43,7 @@
 }
 
 
-@media (min-width: $query-md) {
+@media only screen and (min-width: $query-md-min) and (max-width: $query-md-max) {
   .md\:content-center {
     align-content: center;
   }
@@ -65,7 +65,7 @@
   }
 }
 
-@media (min-width: $query-lg) {
+@media only screen and (min-width: $query-lg-min) and (max-width: $query-lg-max) {
   .lg\:content-center {
     align-content: center;
   }
@@ -87,7 +87,7 @@
   }
 }
 
-@media (min-width: $query-xl) {
+@media only screen and (min-width: $query-xl-min) and (max-width: $query-xl-max) {
   .xl\:content-center {
     align-content: center;
   }

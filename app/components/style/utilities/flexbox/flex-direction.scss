@@ -16,7 +16,7 @@
   flex-direction: column-reverse;
 }
 
-@media (min-width: $query-sm) {
+@media only screen and (max-width: $query-sm-max) {
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@media (min-width: $query-md) {
+@media only screen and (min-width: $query-md-min) and (max-width: $query-md-max) {
   .md\:flex-row {
     flex-direction: row;
   }
@@ -52,7 +52,7 @@
   }
 }
 
-@media (min-width: $query-lg) {
+@media only screen and (min-width: $query-lg-min) and (max-width: $query-lg-max) {
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -70,7 +70,7 @@
   }
 }
 
-@media (min-width: $query-xl) {
+@media only screen and (min-width: $query-xl-min) and (max-width: $query-xl-max) {
   .xl\:flex-row {
     flex-direction: row;
   }

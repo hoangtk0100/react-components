@@ -99,6 +99,50 @@ const spans = Object.freeze({
   full: 'w-full',
 });
 
+const getResponsiveAll = ({ sm, md, lg, xl }) =>
+  cn(
+    getResponsive(sm, 'sm:'),
+    getResponsive(md, 'md:'),
+    getResponsive(lg, 'lg:'),
+    getResponsive(xl, 'xl:'),
+  );
+
+const getResponsive = (
+  {
+    row,
+    col,
+    reverse,
+    justify,
+    items,
+    content,
+    self,
+    wrap,
+    grow,
+    shrink,
+    flex,
+    span,
+  },
+  query,
+) => {
+  let directionClass = '';
+  if (row || col || reverse) {
+    directionClass = getDirection({ row, col, reverse });
+  }
+
+  return cn(
+    directionClass ? `${query}${directionClass}` : null,
+    justifys[justify] ? `${query}${justifys[justify]}` : null,
+    listItems[items] ? `${query}${listItems[items]}` : null,
+    contents[content] ? `${query}${contents[content]}` : null,
+    selfs[self] ? `${query}${selfs[self]}` : null,
+    wraps[wrap] ? `${query}${wraps[wrap]}` : null,
+    grows[grow] ? `${query}${grows[grow]}` : null,
+    shrinks[shrink] ? `${query}${shrinks[shrink]}` : null,
+    flexs[flex] ? `${query}${flexs[flex]}` : null,
+    spans[span] ? `${query}${spans[span]}` : null,
+  );
+};
+
 const Grid = ({
   className,
   row,
@@ -115,6 +159,10 @@ const Grid = ({
   flex,
   span,
   children,
+  sm,
+  md,
+  lg,
+  xl,
 }) => (
   <div
     className={cn(
@@ -130,6 +178,7 @@ const Grid = ({
       flexs[flex],
       margins[margin],
       spans[span],
+      getResponsiveAll({ sm, md, lg, xl }),
       className,
     )}
   >
@@ -137,10 +186,7 @@ const Grid = ({
   </div>
 );
 
-Grid.displayName = 'Grid';
-Grid.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
+const responsivePropTypes = Object.freeze({
   row: PropTypes.bool,
   col: PropTypes.bool,
   reverse: PropTypes.bool,
@@ -153,6 +199,13 @@ Grid.propTypes = {
   justify: PropTypes.oneOf(Object.keys(justifys)),
   items: PropTypes.oneOf(Object.keys(listItems)),
   span: PropTypes.oneOf(Object.keys(spans)),
+});
+
+Grid.displayName = 'Grid';
+Grid.propTypes = {
+  ...responsivePropTypes,
+  className: PropTypes.string,
+  children: PropTypes.node,
   margin: PropTypes.oneOf([
     0,
     1,
@@ -172,7 +225,16 @@ Grid.propTypes = {
     '7',
     '8',
   ]),
+  sm: PropTypes.shape(responsivePropTypes),
+  md: PropTypes.shape(responsivePropTypes),
+  lg: PropTypes.shape(responsivePropTypes),
+  xl: PropTypes.shape(responsivePropTypes),
 };
-Grid.defaultProps = {};
+Grid.defaultProps = {
+  sm: {},
+  md: {},
+  lg: {},
+  xl: {},
+};
 
 export default Grid;
