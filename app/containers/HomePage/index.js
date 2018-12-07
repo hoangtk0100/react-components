@@ -54,6 +54,7 @@ export default class HomePage extends React.PureComponent {
           description="This is a desciption"
         />
         <Alert
+          isHideIcon
           type="info"
           message="This is a message"
           description="This is a desciption"
@@ -68,7 +69,7 @@ export default class HomePage extends React.PureComponent {
           message="This is a message"
           description="This is a desciption"
         />
-        <Alert type="success" message="This is a message" />
+        <Alert isHideIcon type="success" message="This is a message" />
         <Alert type="info" message="This is a message" />
         <Alert type="warning" message="This is a message" />
         <Alert type="error" message="This is a message" />

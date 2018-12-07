@@ -48,7 +48,10 @@ class Alert extends React.PureComponent {
         className={cn(
           'rc-alert',
           types[type],
-          { 'rc-alert--with-description': description },
+          {
+            'rc-alert--with-description': description,
+            'rc-alert--with-no-icon': isHideIcon,
+          },
           className,
         )}
       >
