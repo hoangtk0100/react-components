@@ -21,7 +21,7 @@ const GroupButton = ({ className, children, ...otherProps }) => (
 
 GroupButton.displayName = 'GroupButton';
 GroupButton.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 GroupButton.defaultProps = {};

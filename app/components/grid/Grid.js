@@ -8,7 +8,7 @@ import '../style/utilities/spacing.scss';
 import '../style/utilities/sizing/width.scss';
 import './style/Grid.scss';
 
-const getDirection = ({ row, col, reverse }) => {
+export const getDirection = ({ row, col, reverse }) => {
   if (!row && !col) {
     return '';
   }
@@ -19,54 +19,54 @@ const getDirection = ({ row, col, reverse }) => {
     .concat(reverse ? '-reverse' : '');
 };
 
-const justifys = Object.freeze({
+export const justifys = Object.freeze({
   start: 'justify-start',
   center: 'justify-center',
   end: 'justify-end',
   between: 'justify-between',
   around: 'justify-around',
 });
-const listItems = Object.freeze({
+export const listItems = Object.freeze({
   stretch: 'items-stretch',
   start: 'items-start',
   center: 'items-center',
   end: 'items-end',
   baseline: 'items-baseline',
 });
-const wraps = Object.freeze({
+export const wraps = Object.freeze({
   [true]: 'flex-wrap',
   [false]: 'flex-no-wrap',
   reverse: 'flex-wrap-reverse',
 });
-const grows = Object.freeze({
+export const grows = Object.freeze({
   [true]: 'flex-grow',
   [false]: 'flex-no-grow',
 });
-const shrinks = Object.freeze({
+export const shrinks = Object.freeze({
   [true]: 'flex-shrink',
   [false]: 'flex-no-shrink',
 });
-const flexs = Object.freeze({
+export const flexs = Object.freeze({
   initial: 'flex-initial',
   1: 'flex-1',
   auto: 'flex-auto',
   none: 'flex-none',
 });
-const contents = Object.freeze({
+export const contents = Object.freeze({
   start: 'content-start',
   center: 'content-center',
   end: 'content-end',
   between: 'content-between',
   around: 'content-around',
 });
-const selfs = Object.freeze({
+export const selfs = Object.freeze({
   auto: 'self-auto',
   start: 'self-start',
   center: 'self-center',
   end: 'self-end',
   stretch: 'self-stretch',
 });
-const margins = Object.freeze({
+export const margins = Object.freeze({
   0: 'm-0',
   1: 'm-1',
   2: 'm-2',
@@ -77,7 +77,7 @@ const margins = Object.freeze({
   7: 'm-7',
   8: 'm-8',
 });
-const spans = Object.freeze({
+export const spans = Object.freeze({
   '1/2': 'w-1/2',
   '6/12': 'w-6/12',
   '1/3': 'w-1/3',
@@ -104,7 +104,7 @@ const spans = Object.freeze({
   full: 'w-full',
 });
 
-const getResponsiveAll = ({ sm, md, lg, xl }) =>
+export const getResponsiveAll = ({ sm, md, lg, xl }) =>
   cn(
     getResponsive(sm, 'sm:'),
     getResponsive(md, 'md:'),
@@ -112,7 +112,7 @@ const getResponsiveAll = ({ sm, md, lg, xl }) =>
     getResponsive(xl, 'xl:'),
   );
 
-const getResponsive = (
+export const getResponsive = (
   {
     row,
     col,

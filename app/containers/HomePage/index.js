@@ -19,7 +19,10 @@ import {
   Tooltip,
   Switch,
   Modal,
+  Dropdown,
 } from '../../components/core';
+
+import { withClickOutside } from '../../components/utils'
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -34,6 +37,8 @@ const Wrapper = styled.div`
   }
 `;
 
+const EnhareButton = withClickOutside(Button);
+
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   state = { activeTab: 'tab-2', open: true };
@@ -41,6 +46,9 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
+        <EnhareButton color="primary" onClickOutside={e => console.log(e)}>
+          Click OUtside Button
+        </EnhareButton>
         <Modal
           header="This is a header!"
           open={this.state.open}
@@ -58,11 +66,103 @@ export default class HomePage extends React.PureComponent {
                 <Button onClick={() => this.setState({ open: true })}>
                   Open Modal
                 </Button>
-                <Button color="primary">
+                <Dropdown overlay="This is a Dropdown content">
+                  <Button size="large" color="primary">
+                    <Icon icon="atom" />
+                    Primary Button
+                    <Icon icon="atom" />
+                  </Button>
+                </Dropdown>
+                <Button.Link href="https://google.com" color="primary">
                   <Icon icon="atom" />
-                  Primary Button
+                </Button.Link>
+                <Button size="large" color="primary">
+                  <Icon icon="atom" />
+                  Large Primary
+                </Button>
+                <Button size="small" color="primary">
+                  Small Primary
                   <Icon icon="atom" />
                 </Button>
+                <Button.Group size="small" color="primary">
+                  <Button>
+                    <Icon icon="atom" />
+                    Button
+                  </Button>
+                  <Button>
+                    Button
+                    <Icon icon="atom" />
+                  </Button>
+                  <Button>Button</Button>
+                </Button.Group>
+                <Button.Group size="large" color="primary">
+                  <Button>Button</Button>
+                </Button.Group>
+                <Switch size="small" />
+                <Switch size="small" disabled />
+                <Switch size="small" checked disabled />
+                <Switch size="large" />
+                <Switch
+                  checked={!!this.state.checked}
+                  onChange={e => this.setState({ checked: e.target.checked })}
+                />
+              </Wrapper>
+              <Wrapper>
+                <Button onClick={() => this.setState({ open: true })}>
+                  Open Modal
+                </Button>
+                <Dropdown overlay="This is a Dropdown content">
+                  <Button color="primary">
+                    <Icon icon="atom" />
+                    Primary Button
+                    <Icon icon="atom" />
+                  </Button>
+                </Dropdown>
+                <Button disabled color="primary">
+                  <Icon icon="atom" />
+                </Button>
+                <Button size="large" color="primary">
+                  <Icon icon="atom" />
+                  Large Primary
+                </Button>
+                <Button size="small" color="primary">
+                  Small Primary
+                  <Icon icon="atom" />
+                </Button>
+                <Button.Group size="small" color="primary">
+                  <Button>
+                    <Icon icon="atom" />
+                    Button
+                  </Button>
+                  <Button>
+                    Button
+                    <Icon icon="atom" />
+                  </Button>
+                  <Button>Button</Button>
+                </Button.Group>
+                <Button.Group size="large" color="primary">
+                  <Button>Button</Button>
+                </Button.Group>
+                <Switch size="small" />
+                <Switch size="small" disabled />
+                <Switch size="small" checked disabled />
+                <Switch size="large" />
+                <Switch
+                  checked={!!this.state.checked}
+                  onChange={e => this.setState({ checked: e.target.checked })}
+                />
+              </Wrapper>
+              <Wrapper>
+                <Button onClick={() => this.setState({ open: true })}>
+                  Open Modal
+                </Button>
+                <Dropdown overlay="This is a Dropdown content">
+                  <Button color="primary">
+                    <Icon icon="atom" />
+                    Primary Button
+                    <Icon icon="atom" />
+                  </Button>
+                </Dropdown>
                 <Button disabled color="primary">
                   <Icon icon="atom" />
                 </Button>

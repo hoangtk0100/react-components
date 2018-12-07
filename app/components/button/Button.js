@@ -5,24 +5,19 @@ import cn from 'classnames';
 
 import './style/Button.scss';
 
-const sizes = Object.freeze({
+export const sizes = Object.freeze({
   small: 'rc-button--small',
   large: 'rc-button--large',
 });
-const colors = Object.freeze({
+export const colors = Object.freeze({
   primary: 'rc-button--primary',
 });
-const types = Object.freeze({
+export const types = Object.freeze({
   ghost: 'rc-button--ghost',
   dashed: 'rc-button--dashed',
 });
-const shapes = Object.freeze({
+export const shapes = Object.freeze({
   circle: 'rc-button--circle',
-});
-const htmlTypes = Object.freeze({
-  button: 'button',
-  submit: 'submit',
-  reset: 'reset',
 });
 
 const Button = ({
@@ -38,8 +33,7 @@ const Button = ({
   ...otherProps
 }) => (
   <button
-    {...otherProps}
-    type={htmlTypes[htmlType]}
+    type={htmlType}
     className={cn(
       'rc-button',
       sizes[size],
@@ -50,6 +44,7 @@ const Button = ({
     )}
     disabled={disabled}
     ref={buttonRef}
+    {...otherProps}
   >
     {React.Children.map(children, item => {
       /* wrapper children by span tags for fix bugs css */
@@ -69,7 +64,7 @@ Button.propTypes = {
   color: PropTypes.oneOf(Object.keys(colors)),
   shape: PropTypes.oneOf(Object.keys(shapes)),
   type: PropTypes.oneOf(Object.keys(types)),
-  htmlType: PropTypes.oneOf(Object.keys(htmlTypes)),
+  htmlType: PropTypes.oneOf(['button', 'submit', 'reset']),
   disabled: PropTypes.bool,
   buttonRef: PropTypes.any,
   children: PropTypes.any,

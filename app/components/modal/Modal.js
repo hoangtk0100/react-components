@@ -40,12 +40,11 @@ class Modal extends React.PureComponent {
       : this.setState({ localOpen: false });
 
   handleLocalOK = () => {
-    const isOK = !this.props.onOK();
-    if (isOK && this.isControlled) {
-      return this.handleLocalClose();
-    }
+    const isOK = this.props.onOK();
     if (isOK) {
-      return this.setState({ localOpen: false });
+      return this.isControlled
+        ? this.handleLocalClose()
+        : this.setState({ localOpen: false });
     }
     return null;
   };
@@ -130,7 +129,7 @@ Modal.defaultProps = {
   propsCancel: {},
   propsOK: {},
   onClose: f => f,
-  onOK: f => f,
+  onOK: () => true,
 };
 
 export default Modal;

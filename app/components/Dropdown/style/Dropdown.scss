@@ -1,0 +1,11 @@
+@import '../../style/variables.scss';
+
+.rc-dropdown {
+  display: block;
+  position: absolute;
+  z-index: $z-index-dropdown;
+  box-shadow: $box-shadow;
+  border-radius: 0.25rem;
+  background-color: white;
+  padding: 0.25rem 0.5em;
+}
