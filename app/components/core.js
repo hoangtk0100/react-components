@@ -7,4 +7,5 @@ export { default as Switch } from './Switch';
 export { default as Modal } from './Modal';
 export { default as Divider } from './Divider';
 export { default as Dropdown } from './Dropdown';
-
+export { default as Radio } from './Radio';
+export { default as Alert } from './Alert';

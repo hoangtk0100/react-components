@@ -1,0 +1,87 @@
+@import '../../style/variables.scss';
+
+.rc-alert {
+  font-size: 1rem;
+  position: relative;
+  margin: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  padding: 1em;
+  border: 0.065em solid $gray-border;
+  border-radius: 0.25em;
+}
+
+.rc-alert__icon {
+  margin-right: 0.5em;
+}
+
+.rc-alert__message {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.rc-alert__description {
+  font-size: 0.85em;
+}
+
+.rc-alert__closable-icon {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translate(-50%, -50%);
+}
+
+.rc-alert--success {
+  border-color: $success;
+  background-color: $success-container-bg;
+
+  .rc-alert__icon {
+    color: $success;
+  }
+}
+
+.rc-alert--info {
+  border-color: $primary;
+  background-color: $primary-container-bg;
+
+  .rc-alert__icon {
+    color: $primary;
+  }
+}
+
+.rc-alert--warning {
+  border-color: $warning;
+  background-color: $warning-container-bg;
+
+  .rc-alert__icon {
+    color: $warning;
+  }
+}
+
+.rc-alert--error {
+  border-color: $error;
+  background-color: $error-container-bg;
+
+  .rc-alert__icon {
+    color: $error;
+  }
+}
+
+.rc-alert--with-description {
+  flex-direction: column;
+  padding: 1em 1em 1em 4em;
+
+  .rc-alert__message {
+    margin-bottom: 0.5em;
+  }
+
+  .rc-alert__icon {
+    position: absolute;
+    top: 0.66667em; /* top = 16/(font-size*16) */
+    left: 1em;
+    font-size: 1.5em;
+  }
+}

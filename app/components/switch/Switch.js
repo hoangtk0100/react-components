@@ -4,26 +4,26 @@ import cn from 'classnames';
 
 import './style/Switch.scss';
 
-export const sizes = {
+export const sizes = Object.freeze({
   small: 'rc-switch--small',
   large: 'rc-switch--large',
-};
+});
 
-const Switch = ({ className, size, inputRef, ...otherProps }) => (
+const Switch = ({ className, size, switchRef, ...otherProps }) => (
   <label className={cn('rc-switch', sizes[size], className)}>
     <input
       {...otherProps}
-      ref={inputRef}
-      className="rc-switch__checkbox"
+      ref={switchRef}
+      className="rc-switch__input-checkbox"
       type="checkbox"
     />
-    <span className="rc-switch__slider" />
+    <span className="rc-switch__switch" />
   </label>
 );
 
 Switch.displayName = 'Switch';
 Switch.propTypes = {
-  inputRef: PropTypes.array,
+  switchRef: PropTypes.array,
   size: PropTypes.oneOf(Object.keys(sizes)),
   className: PropTypes.string,
   onChange: PropTypes.func,

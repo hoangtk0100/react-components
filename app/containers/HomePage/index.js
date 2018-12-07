@@ -19,10 +19,12 @@ import {
   Tooltip,
   Switch,
   Modal,
+  Radio,
   Dropdown,
+  Alert,
 } from '../../components/core';
 
-import { withClickOutside } from '../../components/utils'
+import { withClickOutside } from '../../components/utils';
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -46,6 +48,30 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
+        <Alert
+          type="success"
+          message="This is a message"
+          description="This is a desciption"
+        />
+        <Alert
+          type="info"
+          message="This is a message"
+          description="This is a desciption"
+        />
+        <Alert
+          type="warning"
+          message="This is a message"
+          description="This is a desciption"
+        />
+        <Alert
+          type="error"
+          message="This is a message"
+          description="This is a desciption"
+        />
+        <Alert type="success" message="This is a message" />
+        <Alert type="info" message="This is a message" />
+        <Alert type="warning" message="This is a message" />
+        <Alert type="error" message="This is a message" />
         <EnhareButton color="primary" onClickOutside={e => console.log(e)}>
           Click OUtside Button
         </EnhareButton>
@@ -99,6 +125,13 @@ export default class HomePage extends React.PureComponent {
                   <Button>Button</Button>
                 </Button.Group>
                 <Switch size="small" />
+                <Radio checked />
+                <Radio size="small" />
+                <Radio size="large" />
+                <Radio
+                  checked={!!this.state.checked}
+                  onChange={e => this.setState({ checked: e.target.checked })}
+                />
                 <Switch size="small" disabled />
                 <Switch size="small" checked disabled />
                 <Switch size="large" />
@@ -189,7 +222,7 @@ export default class HomePage extends React.PureComponent {
                   <Button>Button</Button>
                 </Button.Group>
                 <Switch size="small" />
-                <Switch size="small" disabled />
+                <Switch size="small" checked />
                 <Switch size="small" checked disabled />
                 <Switch size="large" />
                 <Switch

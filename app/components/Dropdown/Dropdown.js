@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import cn from 'classnames';
 
-import placements from './placements';
 import Portal from '../Portal';
 import { canUseDOM } from '../utils';
 
@@ -19,6 +18,32 @@ export const triggers = Object.freeze({
   hover: 'rc-dropdown--hover',
   click: 'rc-dropdown--click',
 });
+export const placements = Object.freeze({
+  top: 'rc-dropdown--top',
+  right: 'rc-dropdown--right',
+  bottom: 'rc-dropdown--bottom',
+  left: 'rc-dropdown--left',
+  'top-left': 'rc-dropdown--top-left',
+  'left-top': 'rc-dropdown--left-top',
+  'top-right': 'rc-dropdown--top-right',
+  'right-top': 'rc-dropdown--right-top',
+  'bottom-left': 'rc-dropdown--bottom-left',
+  'left-bottom': 'rc-dropdown--left-bottom',
+  'bottom-right': 'rc-dropdown--bottom-right',
+  'right-bottom': 'rc-dropdown--right-bottom',
+});
+
+export const getPlacementStyle = (placement, { offsetTop, offsetLeft }) => {
+  switch (placement) {
+    case 'bottom':
+      return {
+        top: offsetTop,
+        left: offsetLeft,
+      };
+    default:
+      return {};
+  }
+};
 
 export default class Dropdown extends React.PureComponent {
   childrenDOM = null;
@@ -34,17 +59,12 @@ export default class Dropdown extends React.PureComponent {
   setPosition = () => {
     const { offsetTop, offsetLeft } = ReactDOM.findDOMNode(this); // eslint-disable-line react/no-find-dom-node
 
-    const { placement } = this.props;
-    let style = {};
-
-    if (placement === 'bottom') {
-      style = {
-        top: offsetTop,
-        left: offsetLeft,
-      };
-    }
-
-    this.setState({ style });
+    this.setState({
+      style: getPlacementStyle(this.props.placement, {
+        offsetTop,
+        offsetLeft,
+      }),
+    });
   };
 
   render() {
