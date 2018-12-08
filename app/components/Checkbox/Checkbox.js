@@ -4,13 +4,8 @@ import cn from 'classnames';
 
 import './style/Checkbox.scss';
 
-export const sizes = Object.freeze({
-  small: 'rc-checkbox--small',
-  large: 'rc-checkbox--large',
-});
-
 const Checkbox = ({ className, size, checkboxRef, ...otherProps }) => (
-  <label className={cn('rc-checkbox', sizes[size], className)}>
+  <label className={cn('rc-checkbox', className)}>
     <input
       {...otherProps}
       ref={checkboxRef}
@@ -24,7 +19,6 @@ const Checkbox = ({ className, size, checkboxRef, ...otherProps }) => (
 Checkbox.displayName = 'Checkbox';
 Checkbox.propTypes = {
   checkboxRef: PropTypes.array,
-  size: PropTypes.oneOf(Object.keys(sizes)),
   className: PropTypes.string,
   onChange: PropTypes.func,
 };

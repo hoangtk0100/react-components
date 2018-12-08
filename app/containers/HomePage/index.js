@@ -22,6 +22,7 @@ import {
   Radio,
   Dropdown,
   Alert,
+  Checkbox,
 } from '../../components/core';
 
 import { withClickOutside } from '../../components/utils';
@@ -134,10 +135,19 @@ export default class HomePage extends React.PureComponent {
                   <Button>Button</Button>
                 </Button.Group>
                 <Switch size="small" />
-                <Radio checked />
+                <Radio checked disabled />
+                <Radio disabled />
                 <Radio size="small" />
                 <Radio size="large" />
                 <Radio
+                  checked={!!this.state.checked}
+                  onChange={e => this.setState({ checked: e.target.checked })}
+                />
+                <Checkbox checked disabled />
+                <Checkbox disabled />
+                <Checkbox size="small" />
+                <Checkbox size="large" />
+                <Checkbox
                   checked={!!this.state.checked}
                   onChange={e => this.setState({ checked: e.target.checked })}
                 />
