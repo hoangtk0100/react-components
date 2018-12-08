@@ -33,6 +33,7 @@ const Button = ({
   ...otherProps
 }) => (
   <button
+    {...otherProps}
     type={htmlType}
     className={cn(
       'rc-button',
@@ -44,7 +45,6 @@ const Button = ({
     )}
     disabled={disabled}
     ref={buttonRef}
-    {...otherProps}
   >
     {React.Children.map(children, item => {
       /* wrapper children by span tags for fix bugs css */

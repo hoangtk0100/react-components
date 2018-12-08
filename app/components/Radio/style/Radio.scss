@@ -4,8 +4,8 @@
   font-size: 0.65rem;
   position: relative;
   display: inline-flex;
-  width: 4em;
-  height: 2em;
+  width: 1.75em;
+  height: 1.75em;
 }
 
 .rc-radio--small {
@@ -17,20 +17,28 @@
 }
 
 .rc-radio__radio {
-  position: absolute;
+  box-sizing: border-box;
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #cccccc;
+  background-color: transparent;
+  border: 0.09375em solid $gray-border;
   border-radius: 10em;
-  box-shadow: 0 0 0 0.125em #cccccc;
   transition: 0.3s;
+
+  &:hover {
+    border-color: $primary;
+  }
 
   &:before {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     content: "";
-    height: 2em;
-    width: 2em;
-    background-color: white;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: transparent;
     border-radius: 10em;
     transition: 0.3s;
   }
@@ -42,10 +50,10 @@
   height: 0;
 
   &:checked + .rc-radio__radio {
-    background-color: $primary;
-    box-shadow: 0 0 0 0.125em $primary;
+    border-color: $primary;
+
     &:before {
-      transform: translateX(100%);
+      background-color:$primary;
     }
   }
 

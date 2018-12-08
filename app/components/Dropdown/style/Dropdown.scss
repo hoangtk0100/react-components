@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .rc-dropdown {
-  display: block;
+  display: none;
   position: absolute;
   z-index: $z-index-dropdown;
   box-shadow: $box-shadow;

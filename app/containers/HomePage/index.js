@@ -29,11 +29,15 @@ import { withClickOutside } from '../../components/utils';
 const Wrapper = styled.div`
   padding: 8px;
   display: flex;
-  flex-flow: column;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  > * {
+    margin: 0.25em;
+  }
+`;
 
+const Wrapper2 = styled.div`
+  padding: 8px;
+  display: block;
   > * {
     margin: 0.25em;
   }
@@ -48,31 +52,6 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
-        <Alert
-          type="success"
-          message="This is a message"
-          description="This is a desciption"
-        />
-        <Alert
-          isHideIcon
-          type="info"
-          message="This is a message"
-          description="This is a desciption"
-        />
-        <Alert
-          type="warning"
-          message="This is a message"
-          description="This is a desciption"
-        />
-        <Alert
-          type="error"
-          message="This is a message"
-          description="This is a desciption"
-        />
-        <Alert isHideIcon type="success" message="This is a message" />
-        <Alert type="info" message="This is a message" />
-        <Alert type="warning" message="This is a message" />
-        <Alert type="error" message="This is a message" />
         <EnhareButton color="primary" onClickOutside={e => console.log(e)}>
           Click OUtside Button
         </EnhareButton>
@@ -88,8 +67,37 @@ export default class HomePage extends React.PureComponent {
             activeTab={this.state.activeTab}
             onChange={(event, tab) => this.setState({ activeTab: tab })}
           >
-            <Tabs.Tab tab="tab-1" title="Button">
+            <Tabs.Tab tab="tab-alert" title="Alert">
               <Wrapper>
+                <Alert
+                  type="success"
+                  message="This is a message"
+                  description="This is a desciption"
+                />
+                <Alert
+                  isHideIcon
+                  type="info"
+                  message="This is a message"
+                  description="This is a desciption"
+                />
+                <Alert
+                  type="warning"
+                  message="This is a message"
+                  description="This is a desciption"
+                />
+                <Alert
+                  type="error"
+                  message="This is a message"
+                  description="This is a desciption"
+                />
+                <Alert isHideIcon type="success" message="This is a message" />
+                <Alert type="info" message="This is a message" />
+                <Alert type="warning" message="This is a message" />
+                <Alert type="error" message="This is a message" />
+              </Wrapper>
+            </Tabs.Tab>
+            <Tabs.Tab tab="tab-1" title="Button">
+              <Wrapper2>
                 <Button onClick={() => this.setState({ open: true })}>
                   Open Modal
                 </Button>
@@ -140,7 +148,7 @@ export default class HomePage extends React.PureComponent {
                   checked={!!this.state.checked}
                   onChange={e => this.setState({ checked: e.target.checked })}
                 />
-              </Wrapper>
+              </Wrapper2>
               <Wrapper>
                 <Button onClick={() => this.setState({ open: true })}>
                   Open Modal

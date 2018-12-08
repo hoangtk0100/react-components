@@ -1,0 +1,8 @@
+@import '../../style/variables.scss';
+
+.rc-textbox {
+  font-size: 1rem;
+  outline: none;
+  border: 0.0625em solid $gray-border;
+  border-radius: 0.25em;
+}
