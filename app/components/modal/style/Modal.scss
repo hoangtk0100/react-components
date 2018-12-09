@@ -15,5 +15,6 @@
   .rc-modal {
     top: 5em;
     max-height: calc(100vh - 10em);
+    max-width: calc(100vw - 5em)
   }
 }

@@ -17,10 +17,11 @@ import ButtonDemo from './ButtonDemo';
 import CheckboxDemo from './CheckboxDemo';
 import ModalDemo from './ModalDemo';
 import IconDemo from './IconDemo';
+import PaginationDemo from './PaginationDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-modal' };
+  state = { activeTab: 'tab-pagination' };
 
   render() {
     return (
@@ -62,7 +63,14 @@ export default class HomePage extends React.PureComponent {
             disabled
             icon={<Icon icon="ban" />}
           >
-            Tab4
+            Disabled Tab
+          </Tabs.Tab>
+          <Tabs.Tab
+            tab="tab-pagination"
+            title="Pagination"
+            icon={<Icon icon="magic" />}
+          >
+            <PaginationDemo />
           </Tabs.Tab>
         </Tabs>
       </div>
