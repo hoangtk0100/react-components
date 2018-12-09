@@ -1,12 +1,12 @@
 import { canUseDOM } from '../utils';
 
 const classes = Object.freeze({
-  info: '.flag__rc-modal--info',
-  success: '.flag__rc-modal--success',
-  warning: '.flag__rc-modal--warning',
-  error: '.flag__rc-modal--error',
-  confirm: '.flag__rc-modal--confirm',
-  delete: '.flag__rc-modal--delete',
+  info: '.flag__rc-modal-confirm',
+  success: '.flag__rc-modal-confirm',
+  warning: '.flag__rc-modal-confirm',
+  error: '.flag__rc-modal-confirm',
+  confirm: '.flag__rc-modal-confirm',
+  delete: '.flag__rc-modal-confirm',
   basis: '.rc-wrapped-modal',
 });
 

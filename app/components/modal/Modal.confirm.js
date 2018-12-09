@@ -1,35 +1,91 @@
 /* eslint-disable consistent-return */
 import React from 'react';
+import cn from 'classnames';
+import { omit } from 'lodash/fp';
 import ReactDOM from 'react-dom';
 
 import { canUseDOM } from '../utils';
 import Modal from './Modal';
+import Icon from '../Icon';
+import './style/Modal.confirm.scss';
 
-/**
- * Don't remove children, title from params because i don't want otherProps have them
- * and don't want using any lib or writting other function
- * If you realy wan't to pass eslint, you can using lodash/omit ot omit fp
- * const otherProps = _.omit(['children', 'title'], props);
- */
-export default ({ className, message, children, title, ...otherProps }) => { // eslint-disable-line
+export const icons = Object.freeze({
+  confirm: 'question',
+  success: 'check',
+  info: 'info',
+  warning: 'exclamation',
+  error: 'times',
+  delete: 'trash',
+});
+
+export const types = props => ({
+  confirm: {},
+  delete: {
+    okText: props.okText || 'Yes',
+    cancelText: props.cancelText || 'No',
+    propsOK: { color: 'error', ...props.propsOK },
+  },
+  info: {},
+  success: {
+    hideCancel: true,
+    propsOK: { color: 'success', ...props.propsOK },
+  },
+  warning: {
+    hideCancel: true,
+    propsOK: { color: 'warning', ...props.propsOK },
+  },
+  error: {
+    hideCancel: true,
+    propsOK: { color: 'error', ...props.propsOK },
+  },
+});
+
+export default type => props => {
   if (!canUseDOM) {
     return null;
   }
 
   const defaultNode = document.createElement('div');
 
-  // flag for Modal.clean('confirm');
-  defaultNode.className = 'flag__rc-modal--confirm';
+  // flag for Modal.clean(type);
+  defaultNode.className = 'flag__rc-modal-confirm';
   document.body.appendChild(defaultNode);
+
+  const {
+    className,
+    message,
+    description,
+    children,
+    title,
+    isHideIcon,
+    ...otherProps
+  } = omit([
+    'children',
+    'title',
+    'hideCancel',
+    'okText',
+    'cancelText',
+    'propsOK',
+  ])(props);
 
   ReactDOM.render(
     <Modal
       {...otherProps}
       defaultOpen
-      className={className}
+      className={cn(className, 'rc-modal-confirm-override')}
       renderJSNode={defaultNode}
+      {...types(props)[type]}
     >
-      {message}
+      <div className="rc-modal-confirm">
+        {!isHideIcon && (
+          <Icon
+            className={`rc-modal-confirm__icon rc-modal-confirm__icon--${type}`}
+            icon={icons[type]}
+          />
+        )}
+        <span className="rc-modal-confirm__message">{message}</span>
+        <span className="rc-modal-confirm__description">{description}</span>
+      </div>
     </Modal>,
     defaultNode,
   );

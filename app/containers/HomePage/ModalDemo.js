@@ -80,6 +80,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.confirm({
                 message: 'Confirm message',
+                description: 'Confirm description',
               })
             }
           >
@@ -90,6 +91,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.delete({
                 message: 'Delete message',
+                description: 'Delete description',
               })
             }
           >
@@ -100,6 +102,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.info({
                 message: 'Info message',
+                description: 'Info description',
               })
             }
           >
@@ -110,6 +113,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.success({
                 message: 'Success message',
+                description: 'Success description',
               })
             }
           >
@@ -120,6 +124,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.error({
                 message: 'Error message',
+                description: 'Error description',
               })
             }
           >
@@ -130,6 +135,7 @@ class Demo extends React.Component {
             onClick={() =>
               Modal.warning({
                 message: 'Warning message',
+                description: 'Warning description',
               })
             }
           >
