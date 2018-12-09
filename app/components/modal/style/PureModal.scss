@@ -5,13 +5,12 @@
   font-size: 1rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
-  z-index: $z-index-modal;
   min-width: 25em;
   min-height: 10em;
   border-radius: 0.5em;
   background-color: white;
   box-shadow: $box-shadow;
+  overflow: hidden;
 }
 
 .rc-modal__close {
@@ -24,6 +23,12 @@
 .rc-modal__title {
   color: $text-color;
   font-weight: 500;
+  background-color: $primary-container-bg;
+}
+
+.rc-modal__content {
+  flex-grow: 1;
+  overflow: scroll;
 }
 
 .rc-modal__title,

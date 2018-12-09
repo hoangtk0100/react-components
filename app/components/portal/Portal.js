@@ -12,6 +12,8 @@ class Portal extends React.Component {
       document.body.removeChild(this.defaultNode);
     }
     this.defaultNode = null;
+
+    this.props.unmountCallback();
   }
 
   render() {
@@ -20,6 +22,9 @@ class Portal extends React.Component {
     }
     if (!this.props.node && !this.defaultNode) {
       this.defaultNode = document.createElement('div');
+
+      // flag for query
+      this.defaultNode.className = 'flag__portal';
       document.body.appendChild(this.defaultNode);
     }
     return ReactDOM.createPortal(
@@ -32,6 +37,10 @@ class Portal extends React.Component {
 Portal.propTypes = {
   children: PropTypes.node.isRequired,
   node: PropTypes.any,
+  unmountCallback: PropTypes.func,
+};
+Portal.defaultProps = {
+  unmountCallback: f => f,
 };
 
 export default Portal;

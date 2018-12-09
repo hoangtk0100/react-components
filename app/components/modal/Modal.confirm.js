@@ -5,20 +5,32 @@ import ReactDOM from 'react-dom';
 import { canUseDOM } from '../utils';
 import Modal from './Modal';
 
-let defaultNode = null;
-
-if (canUseDOM) {
-  defaultNode = document.createElement('div');
-  document.body.appendChild(defaultNode);
-}
-
-export default ({ className, ...otherProps }) => {
+/**
+ * Don't remove children, title from params because i don't want otherProps have them
+ * and don't want using any lib or writting other function
+ * If you realy wan't to pass eslint, you can using lodash/omit ot omit fp
+ * const otherProps = _.omit(['children', 'title'], props);
+ */
+export default ({ className, message, children, title, ...otherProps }) => { // eslint-disable-line
   if (!canUseDOM) {
     return null;
   }
 
+  const defaultNode = document.createElement('div');
+
+  // flag for Modal.clean('confirm');
+  defaultNode.className = 'flag__rc-modal--confirm';
+  document.body.appendChild(defaultNode);
+
   ReactDOM.render(
-    <Modal hideCancel defaultOpen className={className} {...otherProps} />,
+    <Modal
+      {...otherProps}
+      defaultOpen
+      className={className}
+      renderJSNode={defaultNode}
+    >
+      {message}
+    </Modal>,
     defaultNode,
   );
 };

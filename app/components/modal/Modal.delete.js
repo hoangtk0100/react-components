@@ -11,21 +11,31 @@ import Modal from './Modal';
  * If you realy wan't to pass eslint, you can using lodash/omit ot omit fp
  * const otherProps = _.omit(['children', 'title'], props);
  */
-export default ({ className, message, children, title, ...otherProps }) => {
+export default ({
+  className,
+  message,
+  children,
+  title,
+  cancelText,
+  okText,
+  ...otherProps
+}) => {
   if (!canUseDOM) {
     return null;
   }
 
   const defaultNode = document.createElement('div');
 
-  // flag for Modal.clean('info');
-  defaultNode.className = 'flag__rc-modal--info';
+  // flag for Modal.clean('delete');
+  defaultNode.className = 'flag__rc-modal--delete';
   document.body.appendChild(defaultNode);
 
   ReactDOM.render(
     <Modal
       {...otherProps}
-      hideCancel
+      okText={okText || 'Yes'}
+      cancelText={cancelText || 'No'}
+      propsOK={{ color: 'error' }}
       defaultOpen
       className={className}
       renderJSNode={defaultNode}

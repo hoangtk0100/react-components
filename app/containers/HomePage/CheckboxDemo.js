@@ -4,15 +4,11 @@ import { Checkbox, Radio, Switch } from '../../components/core';
 class Demo extends React.Component {
   state = { checked: false };
 
-  onChange = () =>
-    this.setState(prevState => ({
-      ...prevState,
-      checked: !prevState.checked,
-    }));
+  onChange = event => this.setState({ checked: event.target.checked });
 
   render() {
     return (
-      <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '1em' }}>
+      <div>
         <div className="flex mb-8 items-end">
           <Checkbox className="mb-1" />
           <Radio className="mb-1 ml-1" />

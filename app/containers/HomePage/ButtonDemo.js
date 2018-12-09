@@ -6,7 +6,7 @@ class Demo extends React.Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '1em' }}>
+      <div>
         <div className="flex mb-8">
           <Button className="mb-1">Basic Button</Button>
           <Button className="mb-1 ml-1" color="primary">
@@ -17,6 +17,20 @@ class Demo extends React.Component {
           </Button>
           <Button className="mb-1 ml-1" color="primary" disabled>
             Primary Disabled
+          </Button>
+        </div>
+        <div className="flex mb-8">
+          <Button className="mb-1 ml-1" color="primary">
+            Primary
+          </Button>
+          <Button className="mb-1 ml-1" color="error">
+            Error Button
+          </Button>
+          <Button className="mb-1 ml-1" color="warning">
+            Warning Button
+          </Button>
+          <Button className="mb-1 ml-1" color="success">
+            Success
           </Button>
         </div>
         <div className="flex mb-8">

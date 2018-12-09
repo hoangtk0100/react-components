@@ -11,6 +11,9 @@ export const sizes = Object.freeze({
 });
 export const colors = Object.freeze({
   primary: 'rc-button--primary',
+  error: 'rc-button--error',
+  warning: 'rc-button--warning',
+  success: 'rc-button--success',
 });
 export const shapes = Object.freeze({
   circle: 'rc-button--circle',

@@ -33,9 +33,11 @@ class Demo extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: '1em' }}>
+      <div>
         <div className="flex">
-          {fp.map(icon => <Icon className="m-1" icon={icon} />)(icons)}
+          {fp.map(icon => <Icon key={icon} className="m-1" icon={icon} />)(
+            icons,
+          )}
         </div>
       </div>
     );

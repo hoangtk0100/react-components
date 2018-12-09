@@ -20,7 +20,7 @@ import IconDemo from './IconDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-icon' };
+  state = { activeTab: 'tab-modal' };
 
   render() {
     return (

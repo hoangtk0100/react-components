@@ -34,6 +34,25 @@ class Modal extends React.PureComponent {
     }
   }
 
+  unmountPortalCallback = () => {
+    /**
+     * Modal.confirm
+     * Modal.delete
+     * Modal.error
+     * Modal.success
+     * Modal.warning
+     * Modal.infor
+     * renderJSNode only for kind of Modal above
+     */
+    if (canUseDOM && this.props.renderJSNode) {
+      try {
+        document.body.removeChild(this.props.renderJSNode);
+      } catch (e) {
+        console.warn(e); //eslint-disable-line
+      }
+    }
+  };
+
   handleLocalClose = () =>
     this.isControlled
       ? this.props.onClose()
@@ -42,6 +61,16 @@ class Modal extends React.PureComponent {
   handleLocalOK = () => {
     const isOK = this.props.onOK();
     if (isOK) {
+      return this.isControlled
+        ? this.handleLocalClose()
+        : this.setState({ localOpen: false });
+    }
+    return null;
+  };
+
+  handleLocalCancel = () => {
+    const isCancel = this.props.onCancel();
+    if (isCancel) {
       return this.isControlled
         ? this.handleLocalClose()
         : this.setState({ localOpen: false });
@@ -59,6 +88,7 @@ class Modal extends React.PureComponent {
       title,
       footer,
       onClose,
+      onCancel,
       onOK,
       open,
       defaultOpen,
@@ -76,7 +106,7 @@ class Modal extends React.PureComponent {
     const otherPropsOK = omit('className')(propsOK);
 
     return (
-      <Portal node={nodeRender}>
+      <Portal node={nodeRender} unmountCallback={this.unmountPortalCallback}>
         <div className="rc-wrapped-modal">
           <PureModal
             {...otherProps}
@@ -88,7 +118,7 @@ class Modal extends React.PureComponent {
               ) : (
                 <span className="flex justify-end">
                   {!hideCancel && (
-                    <Button onClick={this.handleLocalClose} {...propsCancel}>
+                    <Button onClick={this.handleLocalCancel} {...propsCancel}>
                       {cancelText}
                     </Button>
                   )}
@@ -116,23 +146,28 @@ class Modal extends React.PureComponent {
 
 Modal.displayName = 'Modal';
 Modal.propTypes = {
+  defaultOpen: PropTypes.bool,
   cancelText: PropTypes.string,
   okText: PropTypes.string,
   hideCancel: PropTypes.bool,
   hideOK: PropTypes.bool,
   onClose: PropTypes.func,
   onOK: PropTypes.func,
+  onCancel: PropTypes.func,
   propsCancel: PropTypes.object,
   propsOK: PropTypes.object,
   footer: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+  renderJSNode: PropTypes.any,
 };
 Modal.defaultProps = {
+  defaultOpen: true,
   cancelText: 'Cancel',
   okText: 'OK',
   propsCancel: {},
   propsOK: {},
   onClose: f => f,
   onOK: () => true,
+  onCancel: () => true,
 };
 
 export default Modal;

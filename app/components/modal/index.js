@@ -1,17 +1,25 @@
 import PureModal from './PureModal';
 import Modal from './Modal';
 
-import confirm from './Modal.confirm';
-import success from './Modal.success';
-import warning from './Modal.warning';
-import error from './Modal.error';
-import info from './Modal.info';
+import confirmModal from './Modal.confirm';
+import deleteModal from './Modal.delete';
+import successModal from './Modal.success';
+import warningModal from './Modal.warning';
+import errorModal from './Modal.error';
+import infoModal from './Modal.info';
 
-Modal.confirm = confirm;
-Modal.success = success;
-Modal.warning = warning;
-Modal.error = error;
-Modal.info = info;
+import clean from './clean';
+
+Modal.Pure = PureModal;
+
+Modal.confirm = confirmModal;
+Modal.success = successModal;
+Modal.warning = warningModal;
+Modal.error = errorModal;
+Modal.info = infoModal;
+Modal.delete = deleteModal;
+
+Modal.clean = clean;
 
 export default Modal;
-export { PureModal, confirm, success, warning, error, info };
+export { PureModal };
