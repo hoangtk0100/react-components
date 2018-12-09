@@ -56,7 +56,7 @@ class Modal extends React.PureComponent {
 
     const isHasFooter = 'footer' in this.props;
     const {
-      header,
+      title,
       footer,
       onClose,
       onOK,
@@ -68,6 +68,7 @@ class Modal extends React.PureComponent {
       propsOK,
       hideCancel,
       hideOK,
+      children,
       ...otherProps
     } = this.props;
 
@@ -79,7 +80,7 @@ class Modal extends React.PureComponent {
         <div className="rc-wrapped-modal">
           <PureModal
             {...otherProps}
-            header={header}
+            title={title}
             onClose={onClose}
             footer={
               isHasFooter ? (
@@ -104,7 +105,9 @@ class Modal extends React.PureComponent {
                 </span>
               )
             }
-          />
+          >
+            {children}
+          </PureModal>
         </div>
       </Portal>
     );

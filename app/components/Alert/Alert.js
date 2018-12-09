@@ -77,11 +77,12 @@ Alert.propTypes = {
   onClose: PropTypes.func,
   className: PropTypes.string,
   type: PropTypes.oneOf(Object.keys(types)),
-  message: PropTypes.node,
+  message: PropTypes.node.isRequired,
   description: PropTypes.node,
   children: PropTypes.node,
 };
 Alert.defaultProps = {
+  type: 'info',
   closable: true,
   onClose: f => f,
 };

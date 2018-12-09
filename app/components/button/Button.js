@@ -12,10 +12,6 @@ export const sizes = Object.freeze({
 export const colors = Object.freeze({
   primary: 'rc-button--primary',
 });
-export const types = Object.freeze({
-  ghost: 'rc-button--ghost',
-  dashed: 'rc-button--dashed',
-});
 export const shapes = Object.freeze({
   circle: 'rc-button--circle',
 });
@@ -24,7 +20,6 @@ const Button = ({
   className,
   size,
   color,
-  type,
   htmlType,
   shape,
   disabled,
@@ -39,7 +34,6 @@ const Button = ({
       'rc-button',
       sizes[size],
       colors[color],
-      types[type],
       shapes[shape],
       className,
     )}
@@ -63,7 +57,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.oneOf(Object.keys(colors)),
   shape: PropTypes.oneOf(Object.keys(shapes)),
-  type: PropTypes.oneOf(Object.keys(types)),
   htmlType: PropTypes.oneOf(['button', 'submit', 'reset']),
   disabled: PropTypes.bool,
   buttonRef: PropTypes.any,
