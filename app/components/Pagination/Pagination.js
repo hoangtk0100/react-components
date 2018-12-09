@@ -42,31 +42,34 @@ export default class Pagination extends React.Component {
   calculatePage = pageSize =>
     pageSize ? Math.floor((this.props.total - 1) / pageSize) + 1 : pageSize;
 
-  handlePageChange = (event, current) =>
-    this.isHasCurrent
-      ? this.props.onChange(event, { ...this.state, current })
-      : this.setState({ current });
+  handlePageChange = (event, current) => {
+    this.props.onChange(event, { ...this.state, current });
+    if (!this.isHasCurrent) {
+      this.setState({ current });
+    }
+  };
 
-  handlePageSizeChange = (event, pageZise) =>
-    this.isHasPageSize
-      ? this.props.onChange(event, { ...this.state, pageZise })
-      : this.setState({ pageZise });
+  handlePageSizeChange = (event, pageZise) => {
+    this.props.onChange(event, { ...this.state, pageZise });
+    if (!this.isHasPageSize) {
+      this.setState({ pageZise });
+    }
+  };
 
   isValid = page =>
     isInteger(page) &&
     page >= 1 &&
     page !== this.state.current &&
-    page <= this.calculatePage(this.state.pageSize);
+    this.calculatePage(this.state.pageSize) >= page;
 
   prev = event => {
     const current = this.state.current - 1; // eslint-disable-line react/no-access-state-in-setstate
     if (!this.isValid(current)) {
       return false;
     }
+    this.props.onChange(event, { ...this.state, current });
 
-    return this.isHasCurrent
-      ? this.props.onChange(event, { ...this.state, current })
-      : this.setState({ current });
+    return !this.isHasCurrent ? this.setState({ current }) : false;
   };
 
   next = event => {
@@ -74,10 +77,9 @@ export default class Pagination extends React.Component {
     if (!this.isValid(current)) {
       return false;
     }
+    this.props.onChange(event, { ...this.state, current });
 
-    return this.isHasCurrent
-      ? this.props.onChange(event, { ...this.state, current })
-      : this.setState({ current });
+    return !this.isHasCurrent ? this.setState({ current }) : false;
   };
 
   renderPage = () => {

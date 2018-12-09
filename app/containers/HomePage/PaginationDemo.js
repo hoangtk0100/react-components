@@ -3,7 +3,7 @@ import React from 'react';
 import { Pagination } from '../../components/core';
 
 class Demo extends React.Component {
-  state = { current: 2 };
+  state = { current: 2, pageSize: 3 };
 
   render() {
     return (
@@ -25,6 +25,14 @@ class Demo extends React.Component {
           <Pagination
             total={101}
             current={this.state.current}
+            onChange={(event, { current }) => this.setState({ current })}
+          />
+        </div>
+        <div className="mb-5">
+          <Pagination
+            total={100}
+            current={this.state.current}
+            pageSize={this.state.pageSize}
             onChange={(event, { current }) => this.setState({ current })}
           />
         </div>
