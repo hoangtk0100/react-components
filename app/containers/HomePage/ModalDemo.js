@@ -145,43 +145,43 @@ class Demo extends React.Component {
         <div className="mb-5">
           <Modal.Pure title="This is a title">
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
             <Text.P>This is Pure Modal, use by Modal.Pure</Text.P>
-            <Text.P>Modal.Pure do'nt have the Cancel or OK button</Text.P>
+            <Text.P>Modal.Pure do not have the Cancel or OK button</Text.P>
             <Text.P>You and adding the footer by props.footer</Text.P>
           </Modal.Pure>
         </div>
