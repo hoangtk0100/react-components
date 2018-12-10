@@ -9,9 +9,7 @@
   display: inline-flex;
 }
 
-.rc-pagination__item,
-.rc-pagination__prev,
-.rc-pagination__next {
+.rc-pagination__item {
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 0.25em;
@@ -24,7 +22,6 @@
   list-style: none;
   border: 0.0625em solid $gray-border;
   margin-right: 0.5em;
-  transition: 0.3s;
 
   &:hover {
     border-color: $primary;
@@ -32,8 +29,8 @@
   }
 }
 
-.rc-pagination__prev,
-.rc-pagination__next {
+.rc-pagination__item--prev,
+.rc-pagination__item--next {
   padding-left: 0.25em;
   padding-right: 0.25em;
 }
@@ -41,4 +38,48 @@
 .rc-pagination__item--active {
   border-color: $primary;
   color: $primary;
+  background-color: $primary;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.rc-pagination__item--prev-disabled,
+.rc-pagination__item--next-disabled {
+  cursor: not-allowed;
+  border-color: $gray-border;
+  color: $gray-border;
+
+  &:hover {
+    border-color: $gray-border;
+    color: $gray-border;
+  }
+}
+
+.rc-pagination__item--jump-next,
+.rc-pagination__item--jump-prev {
+  border-color: transparent;
+  
+  > span:before {
+    content: "•••"
+  }
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+.rc-pagination__item--jump-next:hover > span::before,
+.rc-pagination__item--jump-prev:hover > span::before  {
+  font-size: 1.5em;
+}
+
+.rc-pagination__item--jump-next:hover > span::before {
+  content: "»";
+}
+
+.rc-pagination__item--jump-prev:hover > span::before {
+  content: "»";
 }

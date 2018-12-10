@@ -74,3 +74,6 @@ Textarea
 
 Textbox
 - status: not-start
+
+Pagination
+- status: progress

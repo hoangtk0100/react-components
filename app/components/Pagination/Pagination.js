@@ -43,10 +43,12 @@ export default class Pagination extends React.Component {
     pageSize ? Math.floor((this.props.total - 1) / pageSize) + 1 : pageSize;
 
   handlePageChange = (event, current) => {
-    this.props.onChange(event, { ...this.state, current });
-    if (!this.isHasCurrent) {
-      this.setState({ current });
+    if (!this.isValid(current)) {
+      return false;
     }
+    this.props.onChange(event, { ...this.state, current });
+
+    return !this.isHasCurrent ? this.setState({ current }) : false;
   };
 
   handlePageSizeChange = (event, pageZise) => {
@@ -82,37 +84,133 @@ export default class Pagination extends React.Component {
     return !this.isHasCurrent ? this.setState({ current }) : false;
   };
 
-  renderPage = () => {
-    const loop = this.calculatePage(this.state.pageSize);
-    const items = [];
+  isShowJumpPrev = () =>
+    this.state.current - Math.floor(this.props.max / 2) > 3;
 
-    for (let i = 0; i < loop; i += 1) {
-      const key = i + 1;
-      const active = key === this.state.current;
-      items.push(
-        <li
-          key={key}
-          className={cn('rc-pagination__item', `rc-pagination__item-${key}`, {
-            'rc-pagination__item--active': active,
-          })}
-          onClick={event => this.handlePageChange(event, key)}
-        >
-          <span>{key}</span>
-        </li>,
-      );
+  isShowJumpNext = pageCount => {
+    const { current } = this.state;
+    const { max } = this.props;
+
+    return current + Math.floor(max / 2) < pageCount - 2;
+  };
+
+  start = pageCount => {
+    const { current } = this.state;
+    const { max } = this.props;
+
+    let start = current - Math.floor(max / 2);
+
+    if (start <= 3) {
+      return 2;
     }
+    if (start > pageCount - max) {
+      start = pageCount - max + 1;
+    }
+
+    return start;
+  };
+
+  end = pageCount => {
+    const { current } = this.state;
+    const { max } = this.props;
+
+    let end = current + Math.floor(max / 2);
+
+    if (end >= pageCount - 2) {
+      end = pageCount - 1;
+    }
+
+    if (end < max + 1 && max < pageCount - 2) {
+      end = max;
+    }
+
+    return end;
+  };
+
+  renderItems = pageCount => {
+    if (!pageCount) {
+      return [];
+    }
+
+    const { max } = this.props;
+    if (pageCount <= max + 2) {
+      const items = [];
+      for (let i = 1; i <= pageCount; i += 1) {
+        items.push(i);
+      }
+
+      return items;
+    }
+
+    // adding the first page
+    const items = [1];
+
+    if (this.isShowJumpPrev()) {
+      // adding jump-prev
+      items.push('jump-prev');
+    }
+
+    const start = this.start(pageCount);
+    const end = this.end(pageCount);
+
+    // adding more page
+    for (let i = start; i <= end; i += 1) {
+      items.push(i);
+    }
+
+    if (this.isShowJumpNext(pageCount)) {
+      // adding jump-next
+      items.push('jump-next');
+    }
+
+    // adding the last page
+    items.push(pageCount);
 
     return items;
   };
 
   render() {
+    const { current, pageSize } = this.state;
+
+    const pageCount = this.calculatePage(pageSize);
+    const prevDisabled = current <= 1;
+    const nextDisabled = current >= pageCount;
+
+    const items = this.renderItems(pageCount);
+
     return (
       <ul className={cn('rc-pagination', this.props.className)}>
-        <li className="rc-pagination__prev" onClick={this.prev}>
+        <li
+          className={cn('rc-pagination__item rc-pagination__item--prev', {
+            'rc-pagination__item--prev-disabled': prevDisabled,
+          })}
+          onClick={this.prev}
+        >
           <Icon icon="chevron-left" />
         </li>
-        {this.renderPage()}
-        <li className="rc-pagination__next" onClick={this.next}>
+        {items.map(item => {
+          const itemProps = {
+            key: item,
+            className: cn(`rc-pagination__item rc-pagination__item--${item}`, {
+              'rc-pagination__item--active': current === item,
+            }),
+            onClick: event => this.handlePageChange(event, item),
+            children: <span>{item}</span>,
+          };
+
+          if (item === 'jump-prev' || item === 'jump-next') {
+            itemProps.onClick = f => f;
+            itemProps.children = <span />;
+          }
+
+          return <li {...itemProps} />;
+        })}
+        <li
+          className={cn('rc-pagination__item rc-pagination__item--next', {
+            'rc-pagination__item--next-disabled': nextDisabled,
+          })}
+          onClick={this.next}
+        >
           <Icon icon="chevron-right" />
         </li>
       </ul>
@@ -127,11 +225,13 @@ Pagination.propTypes = {
   pageSize: PropTypes.number,
   defaultPageSize: PropTypes.number,
   total: PropTypes.number,
+  max: PropTypes.oneOf([5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]),
   onChange: PropTypes.func,
 };
 Pagination.defaultProps = {
   defaultCurrent: 1,
-  defaultPageSize: 10,
+  defaultPageSize: 2,
   total: 0,
+  max: 31,
   onChange: f => f,
 };
