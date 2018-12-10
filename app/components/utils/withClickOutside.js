@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 export default Component => {
-  class ClickOutsideComponent extends React.Component {
+  class EnhancedComponent extends React.Component {
     targetNode = null;
+
+    // For perfomance case
+    isHasClickOutside = () => 'onClickOutside' in this.props;
 
     componentDidMount() {
       if (!this.isHasClickOutside()) {
         return false;
       }
       this.targetNode = ReactDOM.findDOMNode(this); // eslint-disable-line react/no-find-dom-node
-      return document.addEventListener('click', this.handleClick, false);
+      return document.addEventListener('click', this.handleClickOutside, false);
     }
 
     componentDidUpdate() {
@@ -23,13 +26,10 @@ export default Component => {
     }
 
     componentWillUnmount() {
-      document.removeEventListener('click', this.handleClick, false);
+      document.removeEventListener('click', this.handleClickOutside, false);
     }
 
-    // For perfomance case
-    isHasClickOutside = () => typeof this.props.onClickOutside === 'function';
-
-    handleClick = e => {
+    handleClickOutside = e => {
       if (!this.isHasClickOutside()) {
         return false;
       }
@@ -46,11 +46,14 @@ export default Component => {
     }
   }
 
-  ClickOutsideComponent.propTypes = {
+  EnhancedComponent.displayName = `clickOutside(${Component.displayName ||
+    Component.name ||
+    'Compponent'})`;
+  EnhancedComponent.propTypes = {
     onClickOutside: PropTypes.func,
   };
 
-  ClickOutsideComponent.defaultProps = {};
+  EnhancedComponent.defaultProps = {};
 
-  return ClickOutsideComponent;
+  return EnhancedComponent;
 };

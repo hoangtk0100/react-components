@@ -10,7 +10,7 @@ class Demo extends React.Component {
     // total: 301,
     current2: 1,
     pageSize2: 10,
-    total2: 301,
+    total2: 1001,
   };
 
   // onChange = event => this.setState({ pageSize: +event.target.value });
@@ -37,6 +37,7 @@ class Demo extends React.Component {
           />
           <Pagination.Options
             className="ml-1"
+            options={[10, 20, 30, 50]}
             value={this.state.pageSize2}
             onChange={this.onChange2}
           />
@@ -45,7 +46,6 @@ class Demo extends React.Component {
           <Pagination
             renderItem={item => <Link to={`/#${item}`}>{item}</Link>}
             total={50}
-            onChange={(event, state) => console.log(state)}
           />
         </div>
         <div className="mb-5">

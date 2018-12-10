@@ -1,18 +1,5 @@
 @import '../../style/variables.scss';
 
 .rc-pagination-options {
-  font-size: 1rem;
-  touch-action: manipulation;
-  outline: none;
-  height: 1.75em;
-  background-color: transparent;
-  border: 0.0625em solid $gray-border;
-  border-radius: 0.25em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-
-  &:hover {
-    color: $primary;
-    border-color: $primary;
-  }
+  color: $text-color;
 }

@@ -2,21 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-const Option = ({ className, value, text, render }) => (
-  <div className={cn('rc-select__option rc-select-option', className)}>
-    {render({ value, text })}
+import './style/Option.scss';
+
+const Option = ({
+  className,
+  value,
+  text,
+  selected,
+  render,
+  children,
+  ...otherProps
+}) => (
+  <div
+    className={cn(
+      'rc-select__option rc-select-option',
+      { 'rc-select-option--selected': selected },
+      className,
+    )}
+    {...otherProps}
+  >
+    {render({ value, children })}
   </div>
 );
 
 Option.displayName = 'Select.Option';
 Option.propTypes = {
   className: PropTypes.string,
+  selected: PropTypes.bool,
   render: PropTypes.func,
   value: PropTypes.any,
-  text: PropTypes.node,
+  children: PropTypes.node,
 };
 Option.defaultProps = {
-  render: ({ text }) => text,
+  render: ({ children }) => children,
 };
 
 export default Option;

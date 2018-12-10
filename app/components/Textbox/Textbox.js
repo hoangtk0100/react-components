@@ -9,6 +9,7 @@ import cn from 'classnames';
 import './style/Textbox.scss';
 
 export const sizes = Object.freeze({
+  small: 'rc-textbox--small',
   large: 'rc-textbox--large',
 });
 

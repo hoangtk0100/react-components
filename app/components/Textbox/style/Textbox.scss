@@ -22,6 +22,9 @@
     box-shadow: $box-shadow-primary;
   }
 }
+.rc-textbox--small {
+  font-size: 0.75rem;
+}
 
 .rc-textbox--large {
   font-size: 1.25rem;

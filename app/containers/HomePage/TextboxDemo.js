@@ -27,6 +27,11 @@ class Demo extends React.Component {
             Button
           </Button>
         </div>
+        {/* <div className="flex mb-2 items-end">
+          <Textbox size="small" placeholder="Placeholder" />
+          <Textbox placeholder="Placeholder" className="ml-1" />
+          <Textbox size="large" className="ml-1" placeholder="Placeholder" />
+        </div> */}
         <div className="flex mb-2 items-end">
           <Textarea placeholder="Placeholder" />
         </div>

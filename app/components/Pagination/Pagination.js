@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { isValid, calculatePage } from './utils';
 
-import Icon from '../Icon';
 import './style/Pagination.scss';
 
 export default class Pagination extends React.PureComponent {
@@ -204,7 +203,7 @@ export default class Pagination extends React.PureComponent {
           })}
           onClick={this.prev}
         >
-          <Icon icon="chevron-left" />
+          <span>❮</span>
         </li>
         {items.map(item => {
           const itemProps = {
@@ -229,7 +228,7 @@ export default class Pagination extends React.PureComponent {
           })}
           onClick={this.next}
         >
-          <Icon icon="chevron-right" />
+          <span>❯</span>
         </li>
       </ul>
     );

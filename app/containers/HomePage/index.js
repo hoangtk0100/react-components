@@ -19,10 +19,11 @@ import ModalDemo from './ModalDemo';
 import IconDemo from './IconDemo';
 import PaginationDemo from './PaginationDemo';
 import TextboxDemo from './TextboxDemo';
+import SelectDemo from './SelectDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-textbox' };
+  state = { activeTab: 'tab-select' };
 
   render() {
     return (
@@ -79,6 +80,13 @@ export default class HomePage extends React.PureComponent {
             icon={<Icon icon="keyboard" />}
           >
             <TextboxDemo />
+          </Tabs.Tab>
+          <Tabs.Tab
+            tab="tab-select"
+            title="Select"
+            icon={<Icon icon="mouse-pointer" />}
+          >
+            <SelectDemo />
           </Tabs.Tab>
         </Tabs>
       </div>
