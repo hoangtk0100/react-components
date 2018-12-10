@@ -4,30 +4,41 @@ import { Link } from 'react-router-dom';
 import { Pagination } from '../../components/core';
 
 class Demo extends React.Component {
-  state = { current: 1, pageSize: 10, total: 301 };
+  state = {
+    current: 1,
+    // pageSize: 10,
+    // total: 301,
+    current2: 1,
+    pageSize2: 10,
+    total2: 301,
+  };
 
-  onChange = event => this.setState({ pageSize: +event.target.value });
+  // onChange = event => this.setState({ pageSize: +event.target.value });
+
+  onChange2 = event => this.setState({ pageSize2: +event.target.value });
 
   render() {
     return (
       <div>
         <div className="flex mb-5">
           <Pagination.Total
-            total={this.state.total}
-            page={this.state.current}
-            pageSize={this.state.pageSize}
+            total={this.state.total2}
+            page={this.state.current2}
+            pageSize={this.state.pageSize2}
           />
           <Pagination
             className="ml-1"
-            total={this.state.total}
-            current={this.state.current}
-            pageSize={this.state.pageSize}
-            onChange={(event, { current }) => this.setState({ current })}
+            total={this.state.total2}
+            current={this.state.current2}
+            pageSize={this.state.pageSize2}
+            onChange={(event, { current }) =>
+              this.setState({ current2: current })
+            }
           />
           <Pagination.Options
             className="ml-1"
-            value={this.state.pageSize}
-            onChange={this.onChange}
+            value={this.state.pageSize2}
+            onChange={this.onChange2}
           />
         </div>
         <div className="mb-5">

@@ -27,6 +27,12 @@ export default class Pagination extends React.PureComponent {
 
     if (isValid({ pageCount: newState.pageCount, page: nextProps.current })) {
       newState.current = nextProps.current;
+    } else {
+      this.props.onChange(null, {
+        ...this.state,
+        ...newState,
+        current: newState.pageCount,
+      });
     }
 
     this.setState(newState);
