@@ -7,20 +7,20 @@
   border-radius: 0.25em;
   height: 1.75em;
   box-sizing: border-box;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   display: flex;
   align-items: center;
   color: $text-color;
 
-  &:hover,
-  &:focus {
+  &:hover {
     border-color: $primary;
   }
-}
 
-.rc-textbox--small {
-  font-size: 0.75rem;
+  &:focus {
+    border-color: $primary;
+    box-shadow: $box-shadow-primary;
+  }
 }
 
 .rc-textbox--large {

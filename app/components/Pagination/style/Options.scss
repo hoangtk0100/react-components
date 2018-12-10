@@ -5,14 +5,14 @@
   touch-action: manipulation;
   outline: none;
   height: 1.75em;
-  border: 0.065em solid $gray-border;
   background-color: transparent;
+  border: 0.0625em solid $gray-border;
   border-radius: 0.25em;
   padding-left: 0.5em;
   padding-right: 0.5em;
 
   &:hover {
-    border-color: $primary;
     color: $primary;
+    border-color: $primary;
   }
 }

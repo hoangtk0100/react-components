@@ -18,6 +18,7 @@
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 0.25em;
+  border: 0.0625em solid $gray-border;
   user-select: none;
   min-width: 1.75em;
   height: 100%;
@@ -25,13 +26,12 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  border: 0.0625em solid $gray-border;
   margin-right: 0.5em;
   text-decoration: none;
 
   &:hover {
-    border-color: $primary;
     color: $primary;
+    border-color: $primary;
   }
 }
 
@@ -42,7 +42,6 @@
 }
 
 .rc-pagination__item--active {
-  border-color: $primary;
   color: $primary;
   background-color: $primary;
   color: white;
@@ -55,31 +54,27 @@
 .rc-pagination__item--prev-disabled,
 .rc-pagination__item--next-disabled {
   cursor: not-allowed;
-  border-color: $gray-border;
-  color: $gray-border;
+  border-color: $gray-disabled;
+  color: $gray-disabled;
 
   &:hover {
-    border-color: $gray-border;
-    color: $gray-border;
+    color: $gray-disabled;
+    border-color: $gray-disabled;
   }
 }
 
 .rc-pagination__item--jumpNext,
 .rc-pagination__item--jumpPrev {
-  border-color: transparent;
-  
+  border: none;
   > *:before {
     content: "•••"
-  }
-
-  &:hover {
-    border-color: transparent;
   }
 }
 
 .rc-pagination__item--jumpNext:hover > *:before,
 .rc-pagination__item--jumpPrev:hover > *:before  {
   font-size: 1.5em;
+  line-height: 0.5em;
 }
 
 .rc-pagination__item--jumpNext:hover > *:before {

@@ -16,22 +16,18 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <div className="flex mb-5">
+        <div className="flex mb-2">
           <Textbox
             value={this.state.value}
+            textboxRef={this.textRef}
             onChange={this.onChange}
             placeholder="Placeholder"
           />
-          <Button className="ml-1" onClick={this.onButtonClick}>
+          <Button color="primary" className="ml-1" onClick={this.onButtonClick}>
             Button
           </Button>
         </div>
-        <div className="flex mb-5 items-end">
-          <Textbox size="small" className="mb-1" />
-          <Textbox textboxRef={this.textRef} className="mb-1 ml-1" />
-          <Textbox size="large" className="mb-1 ml-1" />
-        </div>
-        <div className="flex mb-5 items-end">
+        <div className="flex mb-2 items-end">
           <Textarea placeholder="Placeholder" />
         </div>
       </div>

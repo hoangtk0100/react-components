@@ -7,7 +7,7 @@
   flex-flow: row nowrap;
   align-items: baseline;
   padding: 1em;
-  border: 0.065em solid $gray-border;
+  border: none;
   border-radius: 0.25em;
 }
 
@@ -34,7 +34,6 @@
 }
 
 .rc-alert--success {
-  border-color: $success;
   background-color: $success-container-bg;
 
   .rc-alert__icon {
@@ -43,7 +42,6 @@
 }
 
 .rc-alert--info {
-  border-color: $primary;
   background-color: $primary-container-bg;
 
   .rc-alert__icon {
@@ -52,7 +50,6 @@
 }
 
 .rc-alert--warning {
-  border-color: $warning;
   background-color: $warning-container-bg;
 
   .rc-alert__icon {
@@ -61,7 +58,6 @@
 }
 
 .rc-alert--error {
-  border-color: $error;
   background-color: $error-container-bg;
 
   .rc-alert__icon {
