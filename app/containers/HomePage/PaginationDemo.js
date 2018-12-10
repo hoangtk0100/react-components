@@ -16,9 +16,6 @@ class Demo extends React.Component {
             total={this.state.total}
             page={this.state.current}
             pageSize={this.state.pageSize}
-            render={({ total, from, to }) =>
-              `${from}-${to} of ${total} records`
-            }
           />
           <Pagination
             className="ml-1"

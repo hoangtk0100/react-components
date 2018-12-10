@@ -5,4 +5,24 @@
   outline: none;
   border: 0.0625em solid $gray-border;
   border-radius: 0.25em;
+  height: 1.75em;
+  box-sizing: border-box;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  display: flex;
+  align-items: center;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+.rc-textbox--small {
+  font-size: 0.75rem;
+}
+
+.rc-textbox--large {
+  font-size: 1.25rem;
 }

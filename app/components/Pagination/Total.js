@@ -20,11 +20,13 @@ const calculate = ({ total, page, pageSize }) => {
   };
 };
 
-const Total = ({ className, render, ...otherProps }) => (
-  <div className={cn('rc-pagination-total', className)}>
-    {render(calculate(otherProps))}
+const defaultRender = ({ total, from, to }) => ( // eslint-disable-line
+  <div className={cn('rc-pagination-total')}>
+    {from} - {to} of ${total} records
   </div>
 );
+
+const Total = ({ render, ...otherProps }) => render(calculate(otherProps));
 
 Total.displayName = 'Pagination.Total';
 Total.propTypes = {
@@ -34,7 +36,7 @@ Total.propTypes = {
 };
 Total.defaultProps = {
   total: 0,
-  render: total => `Total: ${total}`,
+  render: defaultRender,
 };
 
 export default Total;

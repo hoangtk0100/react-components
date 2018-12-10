@@ -18,10 +18,11 @@ import CheckboxDemo from './CheckboxDemo';
 import ModalDemo from './ModalDemo';
 import IconDemo from './IconDemo';
 import PaginationDemo from './PaginationDemo';
+import TextboxDemo from './TextboxDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-pagination' };
+  state = { activeTab: 'tab-textbox' };
 
   render() {
     return (
@@ -71,6 +72,13 @@ export default class HomePage extends React.PureComponent {
             icon={<Icon icon="magic" />}
           >
             <PaginationDemo />
+          </Tabs.Tab>
+          <Tabs.Tab
+            tab="tab-textbox"
+            title="Textbox"
+            icon={<Icon icon="keyboard" />}
+          >
+            <TextboxDemo />
           </Tabs.Tab>
         </Tabs>
       </div>

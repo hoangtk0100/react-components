@@ -76,4 +76,5 @@ Textbox
 - status: not-start
 
 Pagination
-- status: progress
+- status: done
+- bugs: 0

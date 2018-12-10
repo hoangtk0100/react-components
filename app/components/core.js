@@ -11,4 +11,6 @@ export { default as Radio } from './Radio';
 export { default as Checkbox } from './Checkbox';
 export { default as Alert } from './Alert';
 export { default as Text } from './Text';
+export { default as Textbox } from './Textbox';
+export { default as Textarea } from './Textarea';
 export { default as Pagination } from './Pagination';
