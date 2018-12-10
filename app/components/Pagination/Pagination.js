@@ -185,8 +185,8 @@ export default class Pagination extends React.PureComponent {
     const { current, pageCount } = this.state;
     const { renderItem, className } = this.props;
 
-    const prevDisabled = current <= 1;
-    const nextDisabled = current >= pageCount;
+    const prevDisabled = current <= 1 || current > pageCount;
+    const nextDisabled = current >= pageCount || current < 1;
 
     const items = this.renderItems();
 
