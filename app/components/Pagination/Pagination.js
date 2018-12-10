@@ -84,6 +84,30 @@ export default class Pagination extends React.Component {
     return !this.isHasCurrent ? this.setState({ current }) : false;
   };
 
+  jumpNext = event => {
+    const current = this.state.current + this.props.max; // eslint-disable-line react/no-access-state-in-setstate
+
+    if (!this.isValid(current)) {
+      return false;
+    }
+
+    this.props.onChange(event, { ...this.state, current });
+
+    return !this.isHasCurrent ? this.setState({ current }) : false;
+  };
+
+  jumpPrev = event => {
+    const current = this.state.current - this.props.max; // eslint-disable-line react/no-access-state-in-setstate
+
+    if (!this.isValid(current)) {
+      return false;
+    }
+
+    this.props.onChange(event, { ...this.state, current });
+
+    return !this.isHasCurrent ? this.setState({ current }) : false;
+  };
+
   isShowJumpPrev = () =>
     this.state.current - Math.floor(this.props.max / 2) > 3;
 
@@ -146,8 +170,8 @@ export default class Pagination extends React.Component {
     const items = [1];
 
     if (this.isShowJumpPrev()) {
-      // adding jump-prev
-      items.push('jump-prev');
+      // adding jumpPrev
+      items.push('jumpPrev');
     }
 
     const start = this.start(pageCount);
@@ -159,8 +183,8 @@ export default class Pagination extends React.Component {
     }
 
     if (this.isShowJumpNext(pageCount)) {
-      // adding jump-next
-      items.push('jump-next');
+      // adding jumpNext
+      items.push('jumpNext');
     }
 
     // adding the last page
@@ -198,8 +222,8 @@ export default class Pagination extends React.Component {
             children: <span>{item}</span>,
           };
 
-          if (item === 'jump-prev' || item === 'jump-next') {
-            itemProps.onClick = f => f;
+          if (item === 'jumpPrev' || item === 'jumpNext') {
+            itemProps.onClick = this[item];
             itemProps.children = <span />;
           }
 
@@ -230,8 +254,8 @@ Pagination.propTypes = {
 };
 Pagination.defaultProps = {
   defaultCurrent: 1,
-  defaultPageSize: 2,
+  defaultPageSize: 10,
   total: 0,
-  max: 31,
+  max: 5,
   onChange: f => f,
 };
