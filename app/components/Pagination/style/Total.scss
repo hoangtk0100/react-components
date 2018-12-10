@@ -1,0 +1,14 @@
+@import '../../style/variables.scss';
+
+.rc-pagination-total {
+  font-size: 1em;
+  height: 1.75em;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
+  &:hover {
+    color: $primary;
+  }
+}

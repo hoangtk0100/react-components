@@ -1,12 +1,17 @@
 @import '../../style/variables.scss';
 
+// ul should be reset, and reset.css should be global 
+// ul {
+//   margin: 0;
+//   padding: 0;
+// }
+
 .rc-pagination {
   font-size: 1em;
-  padding: 0;
-  margin: 0;
   list-style: none;
   box-sizing: border-box;
   display: inline-flex;
+  height: 1.75em;
 }
 
 .rc-pagination__item {
@@ -15,13 +20,14 @@
   border-radius: 0.25em;
   user-select: none;
   min-width: 1.75em;
-  height: 1.75em;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
   border: 0.0625em solid $gray-border;
   margin-right: 0.5em;
+  text-decoration: none;
 
   &:hover {
     border-color: $primary;
@@ -62,7 +68,7 @@
 .rc-pagination__item--jumpPrev {
   border-color: transparent;
   
-  > span:before {
+  > *:before {
     content: "•••"
   }
 
@@ -71,15 +77,15 @@
   }
 }
 
-.rc-pagination__item--jumpNext:hover > span::before,
-.rc-pagination__item--jumpPrev:hover > span::before  {
+.rc-pagination__item--jumpNext:hover > *:before,
+.rc-pagination__item--jumpPrev:hover > *:before  {
   font-size: 1.5em;
 }
 
-.rc-pagination__item--jumpNext:hover > span::before {
+.rc-pagination__item--jumpNext:hover > *:before {
   content: "»";
 }
 
-.rc-pagination__item--jumpPrev:hover > span::before {
-  content: "»";
+.rc-pagination__item--jumpPrev:hover > *:before {
+  content: "«";
 }
