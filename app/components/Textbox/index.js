@@ -1,1 +1,1 @@
-export { default } from './Textbox';
+export { default } from './Textbox.Pure';

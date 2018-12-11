@@ -82,6 +82,7 @@ class Demo extends React.Component {
       <div>
         <div className="flex mb-2">
           <Select.Native
+            multiple
             className="ml-1"
             options={[
               { key: 'option-26', value: 'option-26', children: 'Bó Tay' },

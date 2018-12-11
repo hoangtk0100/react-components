@@ -1,6 +1,6 @@
 import Button from './Button';
-import GroupButton from './GroupButton';
-import LinkButton from './LinkButton';
+import GroupButton from './Button.Group';
+import LinkButton from './Button.Link';
 
 Button.Group = GroupButton;
 Button.Link = LinkButton;

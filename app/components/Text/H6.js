@@ -5,7 +5,7 @@ import cn from 'classnames';
 import './style/Heading.scss';
 
 const H6 = ({ className, ...otherProps }) => (
-  <h6 {...otherProps} className={cn('rc-heading', className)} />
+  <h6 {...otherProps} className={cn('rc-heading rc-heading-h6', className)} />
 );
 
 H6.displayName = 'H6';
