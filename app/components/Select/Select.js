@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { keyBy } from 'lodash/fp';
 
-import Option from './Option';
+import Option from './Select.Option';
 
 class Select extends React.PureComponent {
   isHasValue = 'value' in this.props;

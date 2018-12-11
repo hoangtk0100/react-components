@@ -2,7 +2,6 @@ import PureModal from './PureModal';
 import Modal from './Modal';
 
 import confirmModal from './Modal.confirm';
-
 import clean from './clean';
 
 Modal.Pure = PureModal;
