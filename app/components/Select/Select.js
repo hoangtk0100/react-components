@@ -41,6 +41,7 @@ class Select extends React.PureComponent {
   handleClickOutside = event => {
     if (
       this.state.isDropdown === false &&
+      this.selectRef.current &&
       this.selectRef.current.contains(event.target)
     ) {
       return false;
