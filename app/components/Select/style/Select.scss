@@ -1,14 +1,14 @@
 @import '../../style/variables.scss';
 
 .rc-select-native {
-  min-height: 1.75em;
+  min-height: $height;
   height: auto;
   padding-right: 0.5em;
 }
 
 .rc-select,
 .rc-select-native {
-  font-size: 1rem;
+  font-size: $font-size;
   display: inline-block;
 }
 
@@ -42,19 +42,19 @@
   position: relative;
   padding-right: 2em;
   font-size: 1em;
-  height: 1.75em;
+  height: $height;
   display: flex;
   align-items: center;
 }
 
 .rc-select-native--small,
 .rc-select--small {
-  font-size: 0.75rem;
+  font-size: $font-size-small;
 }
 
 .rc-select-native--large,
 .rc-select--large {
-  font-size: 1.25rem;
+  font-size: $font-size-large;
 }
 
 .rc-select--disabled:not(.rc-select-native) {
@@ -96,7 +96,7 @@
   box-sizing: border-box;
   overflow: scroll;
   max-height: 30rem;
-  border-radius: 0.25em;
+  border-radius: $border-radius;
 }
 
 .rc-select--dropdown-visible {

@@ -1,13 +1,13 @@
 @import '../../style/variables.scss';
 
 .rc-textarea {
-  font-size: 1rem;
+  font-size: $font-size;
   outline: none;
   border: 0.0625em solid $gray-border;
-  border-radius: 0.25em;
+  border-radius: $border-radius;
   padding: 0.5em;
   box-sizing: border-box;
-  min-height: 1.75em;
+  min-height: $height;
   color: $text-color;
 
   &:hover,

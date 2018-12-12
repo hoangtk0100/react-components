@@ -7,21 +7,21 @@
 // }
 
 .rc-pagination {
-  font-size: 1em;
+  font-size: $font-size;
   color: $text-color;
   list-style: none;
   box-sizing: border-box;
   display: inline-flex;
-  height: 1.75em;
+  height: $height;
 }
 
 .rc-pagination__item {
   box-sizing: border-box;
   cursor: pointer;
-  border-radius: 0.25em;
+  border-radius: $border-radius;
   border: 0.0625em solid $gray-border;
   user-select: none;
-  min-width: 1.75em;
+  min-width: $height;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@
 }
 
 .rc-pagination__item--active {
-  color: $primary;
+  border-color: $primary;
   background-color: $primary;
   color: white;
 

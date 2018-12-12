@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .rc-tabs {
-  font-size: 1rem;
+  font-size: $font-size;
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
@@ -13,16 +13,16 @@
   padding: 0;
   margin: 0;
   height: 2.5em;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
 }
 
 .rc-tabs__content {
   display: none;
   padding: 0.5em;
   background-color: white;
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
 }
 
 .rc-tabs__content--active {
@@ -53,8 +53,8 @@
   background-color: white;
   color: $primary;
   font-weight: 500;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
 }
 
 .rc-tab--disabled {

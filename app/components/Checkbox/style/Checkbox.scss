@@ -1,7 +1,7 @@
 @import '../../style/variables.scss';
 
 .rc-checkbox {
-  font-size: 1rem;
+  font-size: $font-size;
   position: relative;
   display: inline-flex;
   width: 1.125em;
@@ -15,7 +15,7 @@
   height: 100%;
   background-color: transparent;
   border: 0.0625em solid $gray-border;
-  border-radius: 0.25em;
+  border-radius: $border-radius;
   border-collapse: separate;
   transition: 0.3s;
 

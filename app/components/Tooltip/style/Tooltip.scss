@@ -1,3 +1,5 @@
+@import '../../style/variables.scss';
+
 $tooltip-bg-color: rgba(0, 0, 0, 0.75);
 
 .rc-tooltip {
@@ -20,7 +22,7 @@ $tooltip-bg-color: rgba(0, 0, 0, 0.75);
   padding: 0 0.5em;
   background-color: $tooltip-bg-color;
   color: white;
-  border-radius: 0.25em;
+  border-radius: $border-radius;
 
   &:before {
     position: absolute;

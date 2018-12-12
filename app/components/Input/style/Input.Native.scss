@@ -1,11 +1,11 @@
 @import '../../style/variables.scss';
 
 .rc-native-input {
-  font-size: 1rem;
+  font-size: $font-size;
   outline: none;
   border: 0.0625em solid $gray-border;
-  border-radius: 0.25em;
-  height: 1.75em;
+  border-radius: $border-radius;
+  height: $height;
   box-sizing: border-box;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -24,9 +24,9 @@
 }
 
 .rc-native-input--small {
-  font-size: 0.75rem;
+  font-size: $font-size-small;
 }
 
 .rc-native-input--large {
-  font-size: 1.25rem;
+  font-size: $font-size-large;
 }

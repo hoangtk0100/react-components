@@ -1,21 +1,21 @@
 $primary: #0392cf;
-$primary-hover: #0392cf;
-$primary-focus: #0392cf;
+$primary-hover: lighten($primary, 10%);
+$primary-focus: darken($primary, 10%);
 $primary-container-bg: #e6f7ff;
 
 $success: #7bc043;
-$success-hover: #7bc043;
-$success-focus: #7bc043;
+$success-hover: lighten($success, 10%);
+$success-focus: darken($success, 10%);
 $success-container-bg: #f6ffed;
 
 $warning: #f37736;
-$warning-hover: #f37736;
-$warning-focus: #f37736;
+$warning-hover: lighten($warning, 10%);
+$warning-focus: darken($warning, 10%);
 $warning-container-bg: #fffbe6;
 
 $error: #ee4035;
-$error-hover: #ee4035;
-$error-focus: #ee4035;
+$error-hover: lighten($error, 10%);
+$error-focus: darken($error, 10%);
 $error-container-bg: #fff1f0;
 
 $gray-border: #d9d9d9;
@@ -36,3 +36,10 @@ $query-md: 768px;
 $query-lg: 992px;
 $query-xl: 1200px;
 $query-xxl: 1600px;
+
+$font-size: 1rem;
+$font-size-small: 0.75rem;
+$font-size-large: 1.25rem;
+
+$height: 1.75em;
+$border-radius: 0.25em;

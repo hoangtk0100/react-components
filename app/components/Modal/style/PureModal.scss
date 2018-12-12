@@ -2,12 +2,12 @@
 
 .rc-modal {
   position: relative;
-  font-size: 1rem;
+  font-size: $font-size;
   display: flex;
   flex-flow: column nowrap;
   min-width: 25em;
   min-height: 10em;
-  border-radius: 0.5em;
+  border-radius: $border-radius;
   background-color: white;
   box-shadow: $box-shadow;
   overflow: hidden;

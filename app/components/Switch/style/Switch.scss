@@ -1,19 +1,19 @@
 @import '../../style/variables.scss';
 
 .rc-switch {
-  font-size: 0.65rem;
+  font-size: $font-size;
   position: relative;
   display: inline-flex;
-  width: 4em;
-  height: 2em;
+  width: 2.25em;
+  height: 1.125em;
 }
 
 .rc-switch--small {
-  font-size: 0.5rem;
+  font-size: $font-size-small;
 }
 
 .rc-switch--large {
-  font-size: 0.75rem;
+  font-size: $font-size-large;
 }
 
 .rc-switch__switch {
@@ -29,8 +29,8 @@
   &:before {
     position: absolute;
     content: "";
-    height: 2em;
-    width: 2em;
+    height: 1.125em;
+    width: 1.125em;
     background-color: white;
     border-radius: 10em;
     transition: 0.3s;
