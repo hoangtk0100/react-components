@@ -5,3 +5,4 @@ import './display.scss';
 import './flex-direction.scss';
 import './flex-grow-shrink.scss';
 import './justify-content.scss';
+import './flex-wrapping.scss';

@@ -1,6 +1,6 @@
 @import '../../style/variables.scss';
 
-.rc-pure-textbox {
+.rc-native-input {
   font-size: 1rem;
   outline: none;
   border: 0.0625em solid $gray-border;
@@ -22,10 +22,11 @@
     box-shadow: $box-shadow-primary;
   }
 }
-.rc-pure-textbox--small {
+
+.rc-native-input--small {
   font-size: 0.75rem;
 }
 
-.rc-pure-textbox--large {
+.rc-native-input--large {
   font-size: 1.25rem;
 }

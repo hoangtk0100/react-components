@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import Button from './Button';
-import './style/LinkButton.scss';
+import './style/Button.Link.scss';
 
 const LinkButton = ({
   className,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import './style/GroupButton.scss';
+import './style/Button.Group.scss';
 
 const GroupButton = ({ className, children, ...otherProps }) => (
   <div className={cn('rc-button-group', className)}>

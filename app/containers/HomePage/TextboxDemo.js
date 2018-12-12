@@ -1,6 +1,6 @@
 /* eslint-disable no-console, no-alert */
 import React from 'react';
-import { Textbox, Button, Textarea } from '../../components/core';
+import { Input, Button, Textarea, Grid } from '../../components/core';
 
 class Demo extends React.Component {
   state = { value: '' };
@@ -16,17 +16,34 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <div className="flex mb-2">
-          <Textbox
+        <Grid row wrap className="mb-2">
+          <Input htmlType="color" className="mb-1" />
+          <Input htmlType="password" className="ml-1 mb-1" />
+          <Input htmlType="number" className="ml-1 mb-1" />
+          <Input htmlType="date" className="ml-1 mb-1" />
+          <Input htmlType="datetime" className="ml-1 mb-1" />
+          <Input htmlType="datetime-local" className="ml-1 mb-1" />
+          <Input htmlType="email" className="ml-1 mb-1" />
+          <Input htmlType="search" className="ml-1 mb-1" />
+          <Input htmlType="tel" className="ml-1 mb-1" />
+          <Input htmlType="time" className="ml-1 mb-1" />
+          <Input htmlType="url" className="ml-1 mb-1" />
+          <Input htmlType="week" className="ml-1 mb-1" />
+          <Input
+            className="ml-1 mb-1"
             value={this.state.value}
-            textboxRef={this.textRef}
+            inputRef={this.textRef}
             onChange={this.onChange}
             placeholder="Placeholder"
           />
-          <Button color="primary" className="ml-1" onClick={this.onButtonClick}>
+          <Button
+            color="primary"
+            className="ml-1 mb-1"
+            onClick={this.onButtonClick}
+          >
             Button
           </Button>
-        </div>
+        </Grid>
         {/* <div className="flex mb-2 items-end">
           <Textbox size="small" placeholder="Placeholder" />
           <Textbox placeholder="Placeholder" className="ml-1" />
