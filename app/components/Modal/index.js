@@ -1,17 +1,17 @@
 import PureModal from './PureModal';
 import Modal from './Modal';
 
-import confirmModal from './Modal.confirm';
+import anywhere from './Modal.anywhere';
 import clean from './clean';
 
 Modal.Pure = PureModal;
 
-Modal.confirm = confirmModal('confirm');
-Modal.success = confirmModal('success');
-Modal.warning = confirmModal('warning');
-Modal.error = confirmModal('error');
-Modal.info = confirmModal('info');
-Modal.delete = confirmModal('delete');
+Modal.confirm = anywhere('confirm');
+Modal.success = anywhere('success');
+Modal.warning = anywhere('warning');
+Modal.error = anywhere('error');
+Modal.info = anywhere('info');
+Modal.delete = anywhere('delete');
 
 Modal.clean = clean;
 

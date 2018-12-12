@@ -1,0 +1,60 @@
+@import '../../style/variables.scss';
+
+$anywhere-spacing: 20px;
+
+.rc-alert-anywhere {
+  position: fixed;
+  box-shadow: $box-shadow;
+}
+
+.rc-alert-anywhere--top,
+.rc-alert-anywhere--bottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rc-alert-anywhere--top {
+  top: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--bottom {
+  bottom: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--left,
+.rc-alert-anywhere--right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rc-alert-anywhere--left {
+  left: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--right {
+  right: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--bottom-left,
+.rc-alert-anywhere--left-bottom {
+  bottom: $anywhere-spacing;
+  left: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--bottom-right,
+.rc-alert-anywhere--right-bottom {
+  bottom: $anywhere-spacing;
+  right: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--top-left,
+.rc-alert-anywhere--left-top {
+  top: $anywhere-spacing;
+  left: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--top-right,
+.rc-alert-anywhere--right-top {
+  top: $anywhere-spacing;
+  right: $anywhere-spacing;
+}

@@ -15,3 +15,4 @@ export { default as Textbox } from './Textbox';
 export { default as Textarea } from './Textarea';
 export { default as Pagination } from './Pagination';
 export { default as Select } from './Select';
+export { default as Avatar } from './Avatar';
