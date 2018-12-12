@@ -36,12 +36,6 @@ export class AlertAnywhere extends React.Component {
     visible: true,
   };
 
-  componentDidMount() {
-    if (this.props.duration) {
-      delay(this.props.duration)(this.closeAlert);
-    }
-  }
-
   shouldComponentUpdate() {
     return true;
   }
@@ -74,7 +68,6 @@ export class AlertAnywhere extends React.Component {
     const { className, placement, style, ...otherProps } = omit([
       'renderJSNode',
       'onClose',
-      'duration',
     ])(this.props);
 
     return (
@@ -97,13 +90,11 @@ export class AlertAnywhere extends React.Component {
 }
 
 AlertAnywhere.propTypes = {
-  duration: PropTypes.number,
   onClose: PropTypes.func,
   placement: PropTypes.oneOf(Object.keys(placements)),
 };
 AlertAnywhere.defaultProps = {
   placement: 'top',
-  duration: 2000,
   onClose: f => f,
 };
 
@@ -116,15 +107,10 @@ export default type => props => {
   defaultNode.className = 'flag__rc-alert-anywhere';
   document.body.appendChild(defaultNode);
 
-  const { duration, ...otherProps } = omit('type')(props);
+  const otherProps = omit('type')(props);
 
   ReactDOM.render(
-    <AlertAnywhere
-      {...otherProps}
-      type={type}
-      duration={duration}
-      renderJSNode={defaultNode}
-    />,
+    <AlertAnywhere {...otherProps} type={type} renderJSNode={defaultNode} />,
     defaultNode,
   );
 };

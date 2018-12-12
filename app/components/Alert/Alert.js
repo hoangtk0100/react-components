@@ -19,11 +19,28 @@ export const icons = Object.freeze({
 });
 
 class Alert extends React.PureComponent {
+  timer = null;
+
   state = {
     isShow: true,
   };
 
-  onClosableClick = () =>
+  componentDidMount() {
+    if (this.props.duration) {
+      // can use fp.delay(this.props.duration)(this.closeAlert) to replace
+      // howerver for best perfomance canse
+      // use setTimeout and clear async task in componentWillUnmount lifecycle
+      const timer = setTimeout(() => this.closeAlert(), this.props.duration);
+
+      this.timer = timer;
+    }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+  }
+
+  closeAlert = () =>
     this.setState({ isShow: false }, () => this.props.onClose());
 
   render() {
@@ -62,7 +79,7 @@ class Alert extends React.PureComponent {
           <Icon
             className="rc-alert__closable-icon"
             icon="times"
-            onClick={this.onClosableClick}
+            onClick={this.closeAlert}
           />
         )}
         {children}
@@ -73,6 +90,7 @@ class Alert extends React.PureComponent {
 
 Alert.displayName = 'Alert';
 Alert.propTypes = {
+  duration: PropTypes.oneOfType([PropTypes.number]),
   closable: PropTypes.bool,
   onClose: PropTypes.func,
   className: PropTypes.string,
@@ -83,6 +101,7 @@ Alert.propTypes = {
 };
 Alert.defaultProps = {
   type: 'info',
+  duration: 2000,
   closable: true,
   onClose: f => f,
 };

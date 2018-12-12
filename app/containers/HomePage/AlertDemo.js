@@ -140,6 +140,7 @@ class Demo extends React.Component {
           message="This is a message"
           description="This is a description"
           type="info"
+          duration={0}
         />
         <Alert
           className="mt-5"
