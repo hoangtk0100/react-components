@@ -16,8 +16,19 @@ const colors = Object.freeze({
   success: 'rc-modal--success',
 });
 
-const PureModal = ({ className, size, color, title, footer, children }) => (
-  <div className={cn('rc-modal', sizes[size], colors[color], className)}>
+const PureModal = ({
+  className,
+  style,
+  size,
+  color,
+  title,
+  footer,
+  children,
+}) => (
+  <div
+    className={cn('rc-modal', sizes[size], colors[color], className)}
+    style={style}
+  >
     {title && <div className="rc-modal__title">{title}</div>}
     <div className="rc-modal__content">{children}</div>
     {footer && <div className="rc-modal__footer">{footer}</div>}
@@ -26,6 +37,7 @@ const PureModal = ({ className, size, color, title, footer, children }) => (
 
 PureModal.displayName = 'PureModal';
 PureModal.propTypes = {
+  style: PropTypes.object,
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.oneOf(Object.keys(colors)),

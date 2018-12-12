@@ -1,6 +1,5 @@
 import React from 'react';
 import { Alert, Button } from '../../components/core';
-window.Alert = Alert;
 
 class Demo extends React.Component {
   state = {};

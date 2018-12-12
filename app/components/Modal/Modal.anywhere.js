@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { canUseDOM } from '../utils';
 import Modal from './Modal';
 import Icon from '../Icon';
-import './style/Modal.confirm.scss';
+import './style/Modal.anywhere.scss';
 
 export const icons = Object.freeze({
   confirm: 'question',
