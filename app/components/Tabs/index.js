@@ -1,5 +1,5 @@
 import Tabs from './Tabs';
-import Tab from './Tab';
+import Tab from './Tabs.Tab';
 
 Tabs.Tab = Tab;
 

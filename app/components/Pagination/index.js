@@ -1,6 +1,6 @@
 import Pagination from './Pagination';
-import Options from './Options';
-import Total from './Total';
+import Options from './Pagination.Options';
+import Total from './Pagination.Total';
 
 Pagination.Options = Options;
 Pagination.Total = Total;

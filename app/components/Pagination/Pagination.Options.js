@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import Select from '../Select';
-import './style/Options.scss';
+import './style/Pagination.Options.scss';
 
 export const formatOptions = (options = []) =>
   options.map(option => ({

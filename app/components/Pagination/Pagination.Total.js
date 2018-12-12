@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import './style/Total.scss';
+import './style/Pagination.Total.scss';
 import { isValid, calculatePage } from './utils';
 
 const calculate = ({ total, page, pageSize }) => {
