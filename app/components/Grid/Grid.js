@@ -172,13 +172,14 @@ const Grid = ({
   noShrink,
   flex,
   span,
-  children,
   sm,
   md,
   lg,
   xl,
+  ...otherProps
 }) => (
   <div
+    {...otherProps}
     className={cn(
       'flex',
       getDirection({ row, col, reverse }),
@@ -201,9 +202,7 @@ const Grid = ({
       },
       className,
     )}
-  >
-    {children}
-  </div>
+  />
 );
 
 const responsivePropTypes = Object.freeze({
