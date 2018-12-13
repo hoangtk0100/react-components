@@ -32,9 +32,13 @@ Total.displayName = 'Pagination.Total';
 Total.propTypes = {
   className: PropTypes.string,
   total: PropTypes.number,
+  page: PropTypes.number,
+  pageSize: PropTypes.number,
   render: PropTypes.func,
 };
 Total.defaultProps = {
+  page: 0,
+  pageSize: 0,
   total: 0,
   render: defaultRender,
 };

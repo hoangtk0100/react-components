@@ -20,12 +20,9 @@ const placements = Object.freeze({
   'right-bottom': 'rc-tooltip--right-bottom',
 });
 
-const Tooltip = ({ className, title, children, placement }) => (
+const Tooltip = ({ className, title, placement }) => (
   <div className={cn('rc-tooltip', placements[placement], className)}>
-    <div className="rc-tooltip__content">{children}</div>
-    <div className="rc-tooltip__title">
-      {isString(title) ? <span>{title}</span> : title}
-    </div>
+    {title}
   </div>
 );
 
@@ -34,7 +31,7 @@ Tooltip.propTypes = {
   placement: PropTypes.oneOf(Object.keys(placements)),
   className: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  children: PropTypes.any,
+  children: PropTypes.node,
 };
 Tooltip.defaultProps = {
   placement: 'top',

@@ -84,4 +84,10 @@
     left: 1em;
     font-size: 1.5em;
   }
+
+  .rc-alert__closable-icon {
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 100%);
+  }
 }
