@@ -57,7 +57,12 @@ class Select extends React.PureComponent {
 
   handleChange = (event, value) => {
     this.props.onChange({ target: { value } }, event);
-    this.setState({ value, isDropdown: false });
+
+    if (!this.isHasValue) {
+      return this.setState({ value, isDropdown: false });
+    }
+
+    return null;
   };
 
   render() {

@@ -1,4 +1,4 @@
-import Tooltip from "../Tooltip";
+import Tooltip from '../Tooltip';
 
 Nearby.propTypes = {
   who: 'Tootip',

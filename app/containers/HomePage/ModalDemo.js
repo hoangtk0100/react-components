@@ -191,6 +191,7 @@ class Demo extends React.Component {
           onClose={this.handleCloseModal}
         >
           <Text.P>Basic Modal</Text.P>
+          <Text.Field required>required</Text.Field>
           <Text.P>Basic Modal</Text.P>
           <Text.P>Basic Modal</Text.P>
           <Text.P>Basic Modal</Text.P>

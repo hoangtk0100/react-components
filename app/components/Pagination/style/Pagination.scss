@@ -5,6 +5,8 @@
 //   margin: 0;
 //   padding: 0;
 // }
+$primary: $primary;
+$border-radius: 0;
 
 .rc-pagination {
   font-size: $font-size;
@@ -17,9 +19,11 @@
 
 .rc-pagination__item {
   box-sizing: border-box;
+  background-color: white;
   cursor: pointer;
   border-radius: $border-radius;
   border: 0.0625em solid $gray-border;
+  border-right-width: 0;
   user-select: none;
   min-width: $height;
   height: 100%;
@@ -27,25 +31,40 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin-right: 0.5em;
   text-decoration: none;
 
   &:hover {
     color: $primary;
-    border-color: $primary;
+  }
+
+  &:first-child {
+    border-left-width: 0.0625em;
+    border-top-left-radius: 0.25em;
+    border-bottom-left-radius: 0.25em 
+  }
+
+  &:last-child {
+    border-right-width: 0.0625em;
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em 
   }
 }
 
 .rc-pagination__item--prev,
 .rc-pagination__item--next {
-  padding-left: 0.25em;
-  padding-right: 0.25em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
 }
 
 .rc-pagination__item--active {
   border-color: $primary;
   background-color: $primary;
   color: white;
+  box-shadow: 0 0.0625em 0 $primary, 0 -0.0625em 0 $primary;
+
+  + .rc-pagination__item {
+    border-left-width: 0;
+  }
 
   &:hover {
     color: white;
@@ -55,18 +74,14 @@
 .rc-pagination__item--prev-disabled,
 .rc-pagination__item--next-disabled {
   cursor: not-allowed;
-  border-color: $gray-disabled;
-  color: $gray-disabled;
-
-  &:hover {
-    color: $gray-disabled;
-    border-color: $gray-disabled;
-  }
 }
 
 .rc-pagination__item--jumpNext,
 .rc-pagination__item--jumpPrev {
-  border: none;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  background-color: transparent;
+
   > *:before {
     content: "•••"
   }

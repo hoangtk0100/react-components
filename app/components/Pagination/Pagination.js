@@ -26,12 +26,6 @@ export default class Pagination extends React.PureComponent {
 
     if (isValid({ pageCount: newState.pageCount, page: nextProps.current })) {
       newState.current = nextProps.current;
-    } else {
-      this.props.onChange(null, {
-        ...this.state,
-        ...newState,
-        current: newState.pageCount,
-      });
     }
 
     this.setState(newState);
@@ -43,61 +37,18 @@ export default class Pagination extends React.PureComponent {
     if (!isValid({ pageCount, page: current })) {
       return false;
     }
-    this.props.onChange(event, { ...this.state, current });
-
-    return !this.isHasCurrent ? this.setState({ current }) : false;
+    return this.props.onChange(event, { ...this.state, page: current });
   };
 
-  prev = event => {
-    const { pageCount } = this.state;
+  prev = event => this.handlePageChange(event, this.state.current - 1);
 
-    const current = this.state.current - 1; // eslint-disable-line react/no-access-state-in-setstate
-    if (!isValid({ pageCount, page: current })) {
-      return false;
-    }
-    this.props.onChange(event, { ...this.state, current });
+  next = event => this.handlePageChange(event, this.state.current + 1);
 
-    return !this.isHasCurrent ? this.setState({ current }) : false;
-  };
+  jumpNext = event =>
+    this.handlePageChange(event, this.state.current + this.props.max);
 
-  next = event => {
-    const { pageCount } = this.state;
-
-    const current = this.state.current + 1; // eslint-disable-line react/no-access-state-in-setstate
-    if (!isValid({ pageCount, page: current })) {
-      return false;
-    }
-    this.props.onChange(event, { ...this.state, current });
-
-    return !this.isHasCurrent ? this.setState({ current }) : false;
-  };
-
-  jumpNext = event => {
-    const { pageCount } = this.state;
-
-    const current = this.state.current + this.props.max; // eslint-disable-line react/no-access-state-in-setstate
-    if (!isValid({ pageCount, page: current })) {
-      return false;
-    }
-
-    this.props.onChange(event, { ...this.state, current });
-
-    return !this.isHasCurrent ? this.setState({ current }) : false;
-  };
-
-  jumpPrev = event => {
-    const { pageCount } = this.state;
-    const { max } = this.props;
-
-    const current = this.state.current - max; // eslint-disable-line react/no-access-state-in-setstate
-    if (!isValid({ pageCount, page: current })) {
-      return false;
-    }
-
-    this.props.onChange(event, { ...this.state, current });
-
-    return !this.isHasCurrent ? this.setState({ current }) : false;
-  };
+  jumpPrev = event =>
+    this.handlePageChange(event, this.state.current - this.props.max);
 
   isShowJumpPrev = () =>
     this.state.current - Math.floor(this.props.max / 2) > 3;
@@ -203,7 +154,7 @@ export default class Pagination extends React.PureComponent {
           })}
           onClick={this.prev}
         >
-          <span>❮</span>
+          <span>Prev</span>
         </li>
         {items.map(item => {
           const itemProps = {
@@ -228,7 +179,7 @@ export default class Pagination extends React.PureComponent {
           })}
           onClick={this.next}
         >
-          <span>❯</span>
+          <span>Next</span>
         </li>
       </ul>
     );
