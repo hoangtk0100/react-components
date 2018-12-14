@@ -1,0 +1,60 @@
+@import '../../style/variables.scss';
+
+$font-size: $font-size;
+$background-color-for-thead: #d9d9d9;
+$padding: 1.5em;
+$border-color: #e9e9e9;
+
+.rc-table {
+  font-size: $font-size;
+  border-collapse: collapse;
+  width: 100%;
+  box-sizing: border-box;
+
+  > thead {
+    tr {
+      background-color: $background-color-for-thead;
+      font-weight: 500;
+
+      td {
+        padding: 1em;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  /* Nesting for support expand row */
+  > tbody {
+    > tr {
+      > td {
+        padding: 0.5em 0.75em;
+      }
+    }
+    
+    > tr:nth-child(odd) {
+      background-color: $primary-container-bg;
+    }
+  }
+}
+
+.rc-table--left {
+  text-align: left;
+}
+
+.rc-table--right {
+  text-align: right;
+}
+
+.rc-table--center {
+  text-align: center;
+}
+
+.rc-table--bordered {
+  border: 0.0625em solid $border-color;
+
+  /* Nesting for suport expand row */
+  > thead td,
+  > tbody > tr > td {
+    border: 0.0625em solid $border-color;
+  }
+}

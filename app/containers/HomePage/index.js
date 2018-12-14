@@ -20,10 +20,11 @@ import IconDemo from './IconDemo';
 import PaginationDemo from './PaginationDemo';
 import TextboxDemo from './TextboxDemo';
 import SelectDemo from './SelectDemo';
+import TableDemo from './TableDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-select' };
+  state = { activeTab: 'tab-table' };
 
   render() {
     return (
@@ -87,6 +88,13 @@ export default class HomePage extends React.PureComponent {
             icon={<Icon icon="mouse-pointer" />}
           >
             <SelectDemo />
+          </Tabs.Tab>
+          <Tabs.Tab
+            tab="tab-table"
+            title="Table"
+            icon={<Icon icon="mouse-pointer" />}
+          >
+            <TableDemo />
           </Tabs.Tab>
         </Tabs>
       </div>

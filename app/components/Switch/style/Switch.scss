@@ -1,6 +1,9 @@
 @import '../../style/variables.scss';
 
 $size: 1.5em;
+$color: $primary;
+
+$border-width: 0.0625em;
 
 .rc-switch {
   font-size: $font-size;
@@ -45,8 +48,8 @@ $size: 1.5em;
   height: 0;
 
   &:checked + .rc-switch__switch {
-    background-color: $primary;
-    box-shadow: 0 0 0 $border-width * 2 $primary;
+    background-color: $color;
+    box-shadow: 0 0 0 $border-width * 2 $color;
     &:before {
       transform: translateX(100%);
     }

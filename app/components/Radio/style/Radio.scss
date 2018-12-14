@@ -1,11 +1,16 @@
 @import '../../style/variables.scss';
 
+/* Just change the size if you want make it biger or smaller */
+$size: 1.35em;
+$color: $primary;
+$perfect-number: 2.75;
+
 .rc-radio {
   font-size: $font-size;
   position: relative;
   display: inline-flex;
-  width: 1.5em;
-  height: 1.5em;
+  width: $size;
+  height: $size;
 }
 
 .rc-radio__radio {
@@ -19,7 +24,7 @@
   transition: 0.3s;
 
   &:hover {
-    border-color: $primary;
+    border-color: $color;
   }
 
   &:before {
@@ -29,8 +34,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     content: "";
-    width: 0.6em;
-    height: 0.6em;
+    width: $size / $perfect-number;
+    height: $size / $perfect-number;
     background-color: transparent;
     border-radius: 10em;
     transition: 0.3s;
@@ -44,11 +49,11 @@
   height: 0;
 
   &:checked + .rc-radio__radio {
-    border-color: $primary;
+    border-color: $color;
 
     &:before {
       opacity: 1;
-      background-color:$primary;
+      background-color: $color;
     }
   }
 

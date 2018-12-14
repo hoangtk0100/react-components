@@ -1,11 +1,19 @@
 @import '../../style/variables.scss';
 
+/* Just change the size if you want make it biger or smaller */
+$size: 1.35em;
+$color: $primary;
+
+$perfect-number: 3.5;
+$perfect-number2: $size / 1.35;
+$border-width: 0.125 * $perfect-number2;
+
 .rc-checkbox {
   font-size: $font-size;
   position: relative;
   display: inline-flex;
-  width: 1.5em;
-  height: 1.5em;
+  width: $size;
+  height: $size;
 }
 
 .rc-checkbox__checkbox {
@@ -20,7 +28,7 @@
   transition: 0.3s;
 
   &:hover {
-    border-color: $primary;
+    border-color: $color;
   }
 
   &:before {
@@ -31,9 +39,9 @@
     position: absolute;
     box-sizing: border-box;
     content: "";
-    width: 0.45em;
-    height: 0.9em;
-    border: $border-width * 2 solid white;
+    width: $size / $perfect-number;
+    height: ($size / $perfect-number) * 2;
+    border: $border-width solid white;
     border-top: 0;
     border-left: 0;
     transition: 0.3s;
@@ -47,8 +55,8 @@
   height: 0;
 
   &:checked + .rc-checkbox__checkbox {
-    border-color: $primary;
-    background-color: $primary;
+    border-color: $color;
+    background-color: $color;
 
     &:before {
       opacity: 1;
