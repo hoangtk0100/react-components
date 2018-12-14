@@ -1,14 +1,13 @@
 @import '../../style/variables.scss';
 
-$button-gutter: 0.5em;
-$button-border-sizing: 0.0625em;
+$padding: 1em;
 
 .rc-button {
   font-size: $font-size;
   user-select: none;
   touch-action: manipulation;
   outline: none;
-  border: $button-border-sizing solid $gray-border;
+  border: $border-width solid $border-color;
   background-color: white;
   box-sizing: border-box;
   display: flex;
@@ -16,7 +15,7 @@ $button-border-sizing: 0.0625em;
   align-items: center;
   border-radius: $border-radius;
   height: $height;
-  padding: 0 $button-gutter;
+  padding: 0 $padding;
   color: $text-color;
   cursor: pointer;
 
@@ -29,7 +28,7 @@ $button-border-sizing: 0.0625em;
 
   > .rc-icon + span,
   > span + .rc-icon {
-    margin-left: $button-gutter;
+    margin-left: $padding;
   }
 }
 
@@ -39,13 +38,13 @@ $button-border-sizing: 0.0625em;
   border-color: $primary;
 
   &:hover:not(:disabled) {
-    background-color: $primary-hover;
-    border-color: $primary-hover;
+    background-color: lighten($primary, 10%);
+    border-color: lighten($primary, 10%);
   }
 
   &:focus:not(:disabled) {
-    background-color: $primary-focus;
-    border-color: $primary-focus;
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 10%);
   }
 }
 
@@ -55,13 +54,13 @@ $button-border-sizing: 0.0625em;
   border-color: $error;
 
   &:hover:not(:disabled) {
-    background-color: $error-hover;
-    border-color: $error-hover;
+    background-color: lighten($error, 10%);
+    border-color: lighten($error, 10%);
   }
 
   &:focus:not(:disabled) {
-    background-color: $error-focus;
-    border-color: $error-focus;
+    background-color: darken($error, 10%);
+    border-color: darken($error, 10%);
   }
 }
 
@@ -71,13 +70,13 @@ $button-border-sizing: 0.0625em;
   border-color: $success;
 
   &:hover:not(:disabled) {
-    background-color: $success-hover;
-    border-color: $success-hover;
+    background-color: lighten($success, 10%);
+    border-color: lighten($success, 10%);
   }
 
   &:focus:not(:disabled) {
-    background-color: $success-focus;
-    border-color: $success-focus;
+    background-color: darken($success, 10%);
+    border-color: darken($success, 10%);
   }
 }
 
@@ -87,20 +86,20 @@ $button-border-sizing: 0.0625em;
   border-color: $warning;
 
   &:hover:not(:disabled) {
-    background-color: $warning-hover;
-    border-color: $warning-hover;
+    background-color: lighten($warning, 10%);
+    border-color: lighten($warning, 10%);
   }
 
   &:focus:not(:disabled) {
-    background-color: $warning-focus;
-    border-color: $warning-focus;
+    background-color: darken($warning, 10%);
+    border-color: darken($warning, 10%);
   }
 }
 
 .rc-button--small {
-  font-size: $font-size-small;
+  font-size: $font-size-for-small;
 }
 
 .rc-button--large {
-  font-size: $font-size-large;
+  font-size: $font-size-for-large;
 }

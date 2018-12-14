@@ -124,7 +124,7 @@ class Modal extends React.PureComponent {
                   )}
                   {!hideOK && (
                     <Button
-                      className={cn('ml-1', cnOK)}
+                      className={cn('ml-2', cnOK)}
                       color="primary"
                       onClick={this.handleLocalOK}
                       {...otherPropsOK}

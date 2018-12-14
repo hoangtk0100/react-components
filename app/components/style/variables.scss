@@ -31,15 +31,34 @@ $z-index-modal: 1000;
 $z-index-dropdown: 10;
 $z-index-tooltip: 10;
 
-$query-sm: 576px;
-$query-md: 768px;
-$query-lg: 992px;
-$query-xl: 1200px;
-$query-xxl: 1600px;
-
 $font-size: 1rem;
 $font-size-small: 0.75rem;
 $font-size-large: 1.25rem;
 
 $height: 1.75em;
 $border-radius: 0.25em;
+
+// new
+$primary: #0392cf;
+$success: #7bc043;
+$warning: #f37736;
+$error: #ee4035;
+
+$font-size: 0.875rem;
+$font-size-for-small: 0.75rem;
+$font-size-for-large: 1rem;
+
+$border-radius: 0.25em;
+$border-width: 0.0625rem;
+$height: 2.35em;
+
+$border-color: #dee2e6;
+
+$box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.15);
+$box-shadow-for-primary: 0 0 0 0.125em rgba(24, 144, 255, 0.2);
+
+$query-sm: 576px;
+$query-md: 768px;
+$query-lg: 992px;
+$query-xl: 1200px;
+$query-xxl: 1600px;

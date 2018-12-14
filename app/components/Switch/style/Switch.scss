@@ -1,19 +1,21 @@
 @import '../../style/variables.scss';
 
+$size: 1.5em;
+
 .rc-switch {
   font-size: $font-size;
   position: relative;
   display: inline-flex;
-  width: 2.25em;
-  height: 1.125em;
+  width: $size * 2;
+  height: $size;
 }
 
 .rc-switch--small {
-  font-size: $font-size-small;
+  font-size: $font-size-for-small;
 }
 
 .rc-switch--large {
-  font-size: $font-size-large;
+  font-size: $font-size-for-large;
 }
 
 .rc-switch__switch {
@@ -23,14 +25,14 @@
   height: 100%;
   background-color: #cccccc;
   border-radius: 10em;
-  box-shadow: 0 0 0 0.125em #cccccc;
+  box-shadow: 0 0 0 $border-width * 2 #cccccc;
   transition: 0.3s;
 
   &:before {
     position: absolute;
     content: "";
-    height: 1.125em;
-    width: 1.125em;
+    height: 1.5em;
+    width: 1.5em;
     background-color: white;
     border-radius: 10em;
     transition: 0.3s;
@@ -44,7 +46,7 @@
 
   &:checked + .rc-switch__switch {
     background-color: $primary;
-    box-shadow: 0 0 0 0.125em $primary;
+    box-shadow: 0 0 0 $border-width * 2 $primary;
     &:before {
       transform: translateX(100%);
     }

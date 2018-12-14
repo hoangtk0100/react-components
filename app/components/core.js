@@ -9,6 +9,7 @@ export { default as Text } from './Text';
 export { default as Textarea } from './Textarea';
 export { default as Tooltip } from './Tooltip';
 export { default as Tabs } from './Tabs';
+export { default as Tag } from './Tag';
 export { default as Grid } from './Grid';
 export { default as Switch } from './Switch';
 // export { default as SelectNative } from './Select/Native';

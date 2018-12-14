@@ -1,6 +1,6 @@
 /* eslint-disable no-console, no-alert */
 import React from 'react';
-import { Input, Button, Textarea, Grid } from '../../components/core';
+import { Input, Button, Textarea, Grid, Tag } from '../../components/core';
 
 class Demo extends React.Component {
   state = { value: '' };
@@ -16,6 +16,9 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
+        <Grid row wrap className="p-2">
+          <Tag>primary</Tag>
+        </Grid>
         <Grid row wrap className="mb-2">
           <Input htmlType="color" className="mb-1" />
           <Input htmlType="password" className="ml-1 mb-1" />
