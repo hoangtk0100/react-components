@@ -1,5 +1,10 @@
 @import '../../style/variables.scss';
 
+$background-color-for-primary: lighten($primary, 50%);
+$background-color-for-error: lighten($error, 30%);
+$background-color-for-warning: lighten($warning, 30%);
+$background-color-for-success: lighten($success, 30%);
+
 .rc-alert {
   font-size: $font-size;
   position: relative;
@@ -35,7 +40,7 @@
 }
 
 .rc-alert--success {
-  background-color: $success-container-bg;
+  background-color: $background-color-for-success;
 
   .rc-alert__icon {
     color: $success;
@@ -43,7 +48,7 @@
 }
 
 .rc-alert--info {
-  background-color: $primary-container-bg;
+  background-color: $background-color-for-primary;
 
   .rc-alert__icon {
     color: $primary;
@@ -51,7 +56,7 @@
 }
 
 .rc-alert--warning {
-  background-color: $warning-container-bg;
+  background-color: $background-color-for-warning;
 
   .rc-alert__icon {
     color: $warning;
@@ -59,7 +64,7 @@
 }
 
 .rc-alert--error {
-  background-color: $error-container-bg;
+  background-color: $background-color-for-error;
 
   .rc-alert__icon {
     color: $error;

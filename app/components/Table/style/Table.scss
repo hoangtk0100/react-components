@@ -8,8 +8,8 @@ $border-color: $border-color;
 $border-width: 0.0652em;
 $text-color-when-hover: $text-color;
 $text-color-for-thead: $text-color;
-$primary-container-bg: lighten($primary, 50%);
-$background-color-when-hover: darken($primary-container-bg, 5%);
+$background-color-for-row-odd: lighten($primary, 50%);
+$background-color-when-hover: darken($background-color-for-row-odd, 5%);
 
 .rc-table {
   font-size: $font-size;
@@ -46,7 +46,7 @@ $background-color-when-hover: darken($primary-container-bg, 5%);
     }
     
     > tr:nth-child(odd) {
-      background-color: $primary-container-bg;
+      background-color: $background-color-for-row-odd;
     }
   }
 }

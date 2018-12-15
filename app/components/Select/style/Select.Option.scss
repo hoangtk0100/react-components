@@ -1,5 +1,7 @@
 @import '../../style/variables.scss';
 
+$background-color-for-hover: lighten($primary, 40%);
+
 .rc-select-option {
   position: relative;
   user-select: none;
@@ -13,23 +15,23 @@
   padding: 0.25em 0.5em;
 
   &:hover {
-    background-color: $primary-container-bg;
+    background-color: $background-color-for-hover;
   }
 }
 
 .rc-select-option--disabled {
   cursor: not-allowed;
   background-color: white;
-  color: $text-color-disabled;
+  color: $text-color-when-disabled;
 
   &:hover {
     background-color: white;
-    color: $text-color-disabled;
+    color: $text-color-when-disabled;
   }
 }
 
 .rc-select-option--selected {
-  background-color: $primary-container-bg;
+  background-color: $background-color-for-hover;
 
   &:after {
     content: "✓";

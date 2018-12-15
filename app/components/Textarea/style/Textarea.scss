@@ -3,7 +3,7 @@
 .rc-textarea {
   font-size: $font-size;
   outline: none;
-  border: 0.0625em solid $gray-border;
+  border: 0.0625em solid $border-color;
   border-radius: $border-radius;
   padding: 0.5em;
   box-sizing: border-box;
@@ -16,6 +16,6 @@
   }
 
   &:focus {
-    box-shadow: $box-shadow-primary;
+    box-shadow: $box-shadow-for-primary;
   }
 }
