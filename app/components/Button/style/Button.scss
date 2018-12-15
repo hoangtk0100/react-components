@@ -8,7 +8,7 @@ $padding: 0.8em;
   touch-action: manipulation;
   outline: none;
   border: $border-width solid $border-color;
-  background-color: white;
+  background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@ $padding: 0.8em;
 
 .rc-button--primary {
   background-color: $primary;
-  color: white;
+  color: #ffffff;
   border-color: $primary;
 
   &:hover:not(:disabled) {
@@ -50,7 +50,7 @@ $padding: 0.8em;
 
 .rc-button--error {
   background-color: $error;
-  color: white;
+  color: #ffffff;
   border-color: $error;
 
   &:hover:not(:disabled) {
@@ -66,7 +66,7 @@ $padding: 0.8em;
 
 .rc-button--success {
   background-color: $success;
-  color: white;
+  color: #ffffff;
   border-color: $success;
 
   &:hover:not(:disabled) {
@@ -82,7 +82,7 @@ $padding: 0.8em;
 
 .rc-button--warning {
   background-color: $warning;
-  color: white;
+  color: #ffffff;
   border-color: $warning;
 
   &:hover:not(:disabled) {
@@ -93,6 +93,69 @@ $padding: 0.8em;
   &:focus:not(:disabled) {
     background-color: darken($warning, 10%);
     border-color: darken($warning, 10%);
+  }
+}
+
+.rc-button--ghost:not(:disabled) {
+  background-color: transparent;
+  color: #ffffff;
+
+  &.rc-button--primary,
+  &.rc-button--success,
+  &.rc-button--error,
+  &.rc-button--warning {
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+  
+  &.rc-button--primary {
+    color: $primary;
+
+    &:hover {
+      color: lighten($primary, 10%);
+    }
+
+    &:focus {
+      color: darken($primary, 10%);
+    }
+  }
+
+  &.rc-button--success {
+    color: $success;
+
+    &:hover {
+      color: lighten($success, 10%);
+    }
+
+    &:focus {
+      color: darken($success, 10%);
+    }
+  }
+
+  &.rc-button--error {
+    color: $error;
+
+    &:hover {
+      color: lighten($error, 10%);
+    }
+
+    &:focus {
+      color: darken($error, 10%);
+    }
+  }
+
+  &.rc-button--warning {
+    color: $warning;
+
+    &:hover {
+      color: lighten($warning, 10%);
+    }
+
+    &:focus {
+      color: darken($warning, 10%);
+    }
   }
 }
 

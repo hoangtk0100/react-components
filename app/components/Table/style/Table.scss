@@ -87,16 +87,6 @@ $background-color-when-hover: darken($background-color-for-row-odd, 5%);
   }
 }
 
-@keyframes rc-table-loading-animation {
-  0% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
-  }
-}
-
 .rc-table--loading {
   > tbody > tr > td {
     position: relative;
@@ -111,7 +101,6 @@ $background-color-when-hover: darken($background-color-for-row-odd, 5%);
       height: 100%;
       z-index: 1;
       background-color: $border-color;
-      animation: rc-table-loading-animation 1.4s ease infinite;
     }
   }
 }

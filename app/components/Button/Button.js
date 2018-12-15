@@ -15,16 +15,13 @@ export const colors = Object.freeze({
   warning: 'rc-button--warning',
   success: 'rc-button--success',
 });
-export const shapes = Object.freeze({
-  circle: 'rc-button--circle',
-});
 
 const Button = ({
   className,
   size,
   color,
   htmlType,
-  shape,
+  ghost,
   disabled,
   buttonRef,
   children,
@@ -37,7 +34,7 @@ const Button = ({
       'rc-button',
       sizes[size],
       colors[color],
-      shapes[shape],
+      { 'rc-button--ghost': ghost },
       className,
     )}
     disabled={disabled}
@@ -59,7 +56,7 @@ Button.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(sizes)),
   color: PropTypes.oneOf(Object.keys(colors)),
-  shape: PropTypes.oneOf(Object.keys(shapes)),
+  ghost: PropTypes.bool,
   htmlType: PropTypes.oneOf(['button', 'submit', 'reset']),
   disabled: PropTypes.bool,
   buttonRef: PropTypes.any,
