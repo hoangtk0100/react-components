@@ -14,7 +14,7 @@ class Demo extends React.Component {
             src="https://cdn.vox-cdn.com/thumbor/cScvZWobcTDavyWhISwPj7kYdcA=/0x0:1215x717/1200x800/filters:focal(698x78:892x272)/cdn.vox-cdn.com/uploads/chorus_image/image/56092265/Nasus.0.jpg"
           />
           <Avatar className="ml-1" name="Minh" shape="square" />
-          <Avatar size="100px" className="ml-1" name="Minh" shape="square" />
+          <Avatar size="small" className="ml-1" name="Minh" shape="square" />
           <Avatar size="large" className="ml-1" name="Minh" shape="square" />
           <Avatar
             color="dodgerblue"

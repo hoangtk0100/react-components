@@ -23,7 +23,8 @@ Input
 - bugs: 0
 
 Avatar
-- status: progress
+- status: DONE
+- bugs: 0
 
 Button
 - status: DONE
