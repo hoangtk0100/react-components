@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -9,23 +10,55 @@ export const sizes = Object.freeze({
   large: 'rc-avatar--large',
 });
 
-const Avatar = ({ className, src, alt, size }) => (
-  <div className={cn('rc-avatar', sizes[size], className)}>
-    <img src={src} alt={alt} />
+export const shapes = Object.freeze({
+  square: 'rc-avatar--square',
+  circle: 'rc-avatar--circle',
+});
+
+const Avatar = ({
+  className,
+  size,
+  name,
+  color,
+  shape,
+  icon,
+  style,
+  ...otherProps
+}) => (
+  <div
+    className={cn('rc-avatar', sizes[size], shapes[shape], className)}
+    style={{
+      backgroundColor: color,
+      height: !sizes[size] ? size : null,
+      width: !sizes[size] ? size : null,
+      ...style,
+    }}
+  >
+    {icon || (
+      <React.Fragment>
+        <span className="rc-avatar__name">{name ? name[0] : ''}</span>
+        <img {...otherProps} />
+      </React.Fragment>
+    )}
   </div>
 );
 
 Avatar.displayName = 'Avatar';
 Avatar.propTypes = {
   className: PropTypes.string,
-  src: PropTypes.string,
-  alt: PropTypes.string,
+  name: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  icon: PropTypes.node,
   size: PropTypes.oneOfType([
     PropTypes.oneOf([Object.keys(sizes)]),
     PropTypes.string,
     PropTypes.number,
   ]),
+  shape: PropTypes.oneOf(Object.keys(shapes)),
 };
-Avatar.defaultProps = {};
+Avatar.defaultProps = {
+  shape: 'circle',
+};
 
 export default Avatar;
