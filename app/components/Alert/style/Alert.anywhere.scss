@@ -6,13 +6,25 @@
 
 $anywhere-spacing: 20px;
 $duration: 0.25s;
+$margin: 0.25em;
 
 .rc-alert-anywhere {
+  display: flex;
+  flex-flow: column wrap;
   position: fixed;
 
   .rc-alert {
     box-shadow: $box-shadow;
+    margin-top: $margin;
+    margin-bottom: $margin;
+    z-index: $z-index-alert;
   }
+}
+
+.rc-alert-anywhere--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .rc-alert-anywhere--top,
@@ -67,8 +79,11 @@ $duration: 0.25s;
   right: $anywhere-spacing;
 }
 
-.rc-alert-anywhere--top .rc-alert {
-  animation: bounceInDown $duration ease-in;
+.rc-alert-anywhere--top,
+.rc-alert-anywhere--center {
+  .rc-alert {
+    animation: bounceInDown $duration ease-in;
+  }
 }
 
 .rc-alert-anywhere--bottom .rc-alert {

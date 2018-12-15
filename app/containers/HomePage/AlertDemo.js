@@ -26,6 +26,19 @@ class Demo extends React.Component {
             color="primary"
             onClick={() =>
               Alert.info({
+                placement: 'center',
+                message: 'This is a center info message',
+                description: 'This is a description',
+              })
+            }
+          >
+            center Alert.info
+          </Button>
+          <Button
+            className="ml-1"
+            color="primary"
+            onClick={() =>
+              Alert.info({
                 placement: 'bottom',
                 message: 'This is a bottom info message',
                 description: 'This is a description',

@@ -11,12 +11,8 @@ import Alert from './Alert';
 
 import './style/Alert.anywhere.scss';
 
-let nodeRender = null;
-if (canUseDOM) {
-  nodeRender = document.getElementsByTagName('body')[0]; // eslint-disable-line prefer-destructuring
-}
-
 export const placements = Object.freeze({
+  center: 'rc-alert-anywhere--center',
   top: 'rc-alert-anywhere--top',
   bottom: 'rc-alert-anywhere--bottom',
   left: 'rc-alert-anywhere--left',
@@ -29,6 +25,22 @@ export const placements = Object.freeze({
   'left-bottom': 'rc-alert-anywhere--left-bottom',
   'bottom-right': 'rc-alert-anywhere--bottom-right',
   'right-bottom': 'rc-alert-anywhere--right-bottom',
+});
+
+export const isStack = Object.freeze({
+  center: 'centerStackNode',
+  top: 'topStackNode',
+  bottom: 'bottomStackNode',
+  left: 'leftStackNode',
+  right: 'rightStackNode',
+  'top-left': 'topLeftStackNode',
+  'left-top': 'topLeftStackNode',
+  'top-right': 'topRightStackNode',
+  'right-top': 'topRightStackNode',
+  'bottom-left': 'bottomLeftStackNode',
+  'left-bottom': 'bottomLeftStackNode',
+  'bottom-right': 'bottomRightStackNode',
+  'right-bottom': 'bottomRightStackNode',
 });
 
 export class AlertAnywhere extends React.Component {
@@ -65,21 +77,29 @@ export class AlertAnywhere extends React.Component {
       return null;
     }
 
-    const { className, placement, style, ...otherProps } = omit([
-      'renderJSNode',
+    const { className, placement, style, renderJSNode, ...otherProps } = omit([
       'onClose',
+      'topLeftStackNode',
+      'topStackNode',
+      'topRightStackNode',
+      'rightStackNode',
+      'bottomRightStackNode',
+      'bottomStackNode',
+      'bottomLeftStackNode',
+      'leftStackNode',
+      'centerStackNode',
     ])(this.props);
 
+    const stackNode = this.props[isStack[placement]];
+
     return (
-      <Portal node={nodeRender} unmountCallback={this.unmountPortalCallback}>
-        <div className={cn('rc-alert-anywhere', placements[placement])}>
-          <Alert
-            className={className}
-            style={{ width: '300px', ...style }}
-            {...otherProps}
-            onClose={this.closeAlert}
-          />
-        </div>
+      <Portal node={stackNode} unmountCallback={this.unmountPortalCallback}>
+        <Alert
+          className={className}
+          style={{ width: '300px', ...style }}
+          {...otherProps}
+          onClose={this.closeAlert}
+        />
       </Portal>
     );
   }
@@ -90,9 +110,61 @@ AlertAnywhere.propTypes = {
   placement: PropTypes.oneOf(Object.keys(placements)),
 };
 AlertAnywhere.defaultProps = {
-  placement: 'top',
+  placement: 'bottom-left',
   onClose: f => f,
 };
+
+let topLeftStackNode = null;
+let topStackNode = null;
+let topRightStackNode = null;
+let rightStackNode = null;
+let bottomRightStackNode = null;
+let bottomStackNode = null;
+let bottomLeftStackNode = null;
+let leftStackNode = null;
+let centerStackNode = null;
+
+if (canUseDOM) {
+  topLeftStackNode = document.createElement('div');
+  topLeftStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--top-left';
+
+  topStackNode = document.createElement('div');
+  topStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--top';
+
+  topRightStackNode = document.createElement('div');
+  topRightStackNode.className =
+    'rc-alert-anywhere rc-alert-anywhere--top-right';
+
+  rightStackNode = document.createElement('div');
+  rightStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--right';
+
+  bottomRightStackNode = document.createElement('div');
+  bottomRightStackNode.className =
+    'rc-alert-anywhere rc-alert-anywhere--bottom-right';
+
+  bottomStackNode = document.createElement('div');
+  bottomStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--bottom';
+
+  bottomLeftStackNode = document.createElement('div');
+  bottomLeftStackNode.className =
+    'rc-alert-anywhere rc-alert-anywhere--bottom-left';
+
+  leftStackNode = document.createElement('div');
+  leftStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--left';
+
+  centerStackNode = document.createElement('div');
+  centerStackNode.className = 'rc-alert-anywhere rc-alert-anywhere--center';
+
+  document.body.appendChild(topLeftStackNode);
+  document.body.appendChild(topStackNode);
+  document.body.appendChild(topRightStackNode);
+  document.body.appendChild(rightStackNode);
+  document.body.appendChild(bottomRightStackNode);
+  document.body.appendChild(bottomStackNode);
+  document.body.appendChild(bottomLeftStackNode);
+  document.body.appendChild(leftStackNode);
+  document.body.appendChild(centerStackNode);
+}
 
 export default type => props => {
   if (!canUseDOM) {
@@ -106,7 +178,20 @@ export default type => props => {
   const otherProps = omit('type')(props);
 
   ReactDOM.render(
-    <AlertAnywhere {...otherProps} type={type} renderJSNode={defaultNode} />,
+    <AlertAnywhere
+      {...otherProps}
+      type={type}
+      renderJSNode={defaultNode}
+      topLeftStackNode={topLeftStackNode}
+      topStackNode={topStackNode}
+      topRightStackNode={topRightStackNode}
+      rightStackNode={rightStackNode}
+      bottomRightStackNode={bottomRightStackNode}
+      bottomStackNode={bottomStackNode}
+      bottomLeftStackNode={bottomLeftStackNode}
+      leftStackNode={leftStackNode}
+      centerStackNode={centerStackNode}
+    />,
     defaultNode,
   );
 };
