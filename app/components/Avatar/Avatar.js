@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/alt-text, jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -23,6 +23,7 @@ const Avatar = ({
   shape,
   icon,
   style,
+  onClick,
   ...otherProps
 }) => (
   <div
@@ -33,6 +34,7 @@ const Avatar = ({
       width: !sizes[size] ? size : null,
       ...style,
     }}
+    onClick={onClick}
   >
     {icon || (
       <React.Fragment>
@@ -56,6 +58,7 @@ Avatar.propTypes = {
     PropTypes.number,
   ]),
   shape: PropTypes.oneOf(Object.keys(shapes)),
+  onClick: PropTypes.func,
 };
 Avatar.defaultProps = {
   shape: 'circle',
