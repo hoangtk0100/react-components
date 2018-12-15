@@ -5,24 +5,44 @@ Any support, bugs/issues. Please contact me!
 - mail: nguyenvanhoang26041994@gmail.com
 
 {
-  status: done | progress | fixing | not-start
+  status: DONE | progress | fixing | not-start
   bugs: 0
 }
 
 
 Alert
-- status: done
+- status: progress
+- bugs: 0
+
+Input
+- status: progress
 - bugs: 0
 
 Avatar
 - status: progress
 
 Button
-- status: done
+- status: DONE
+- bugs: 0
+
+Table
+- status: progress
+- bugs: 0
+
+Tooltip
+- status: progress
+- bugs: 0
+
+Select
+- status: progress
+- bugs: 0
+
+Tag
+- status: progress
 - bugs: 0
 
 Checkbox
-- status: done
+- status: DONE
 - bugs: 0
 
 Divider
@@ -32,41 +52,41 @@ Dropdown
 - status: progress
 
 Grid
-- status: done
+- status: DONE
 - bugs: 0
 
 Icon
-- status: done
+- status: DONE
 - bugs: 0
 
 Menu:
 - status: progress
 
 Modal
-- status: done
+- status: DONE
 - bugs: 0
 
 Portal
-- status: done
+- status: DONE
 - bugs: 0
 
 Radio:
-- status: done
+- status: DONE
 - bugs: 0
 
 Spiner
 - status: not-start
 
 Switch
-- status: done
+- status: DONE
 - bugs: 0
 
 Tabs
-- status: done
+- status: progress
 - bugs: 0
 
 Text
-- status: done
+- status: progress
 - bugs: 0
 
 Textarea
@@ -76,5 +96,5 @@ Textbox
 - status: not-start
 
 Pagination
-- status: done
+- status: progress
 - bugs: 0
