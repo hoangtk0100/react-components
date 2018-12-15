@@ -1,10 +1,15 @@
 @import '../../style/variables.scss';
+/* @import '../../style/animate/shake.scss'; */
 
 $anywhere-spacing: 20px;
 
 .rc-alert-anywhere {
   position: fixed;
   box-shadow: $box-shadow;
+}
+
+.rc-alert-anywhere .rc-alert {
+  animation: shake 1s ease-in;
 }
 
 .rc-alert-anywhere--top,

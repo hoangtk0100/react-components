@@ -8,8 +8,8 @@ import PureModal from './PureModal';
 import Button from '../Button';
 import { canUseDOM } from '../utils';
 
-import '../style/utilities/flexbox';
-import '../style/utilities/spacing.scss';
+// import '../style/utilities/flexbox';
+// import '../style/utilities/spacing.css';
 import './style/Modal.scss';
 
 let nodeRender = null;

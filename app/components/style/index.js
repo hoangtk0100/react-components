@@ -1,4 +1,4 @@
 import './variables.scss';
-import './reset.scss';
+import './reset.css';
 import './utilities';
 import './animate';

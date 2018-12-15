@@ -1,7 +1,7 @@
 import './flexbox';
 import './sizing';
-import './floats.scss';
-import './spacing.scss';
-import './text-alignment.scss';
-import './vertical-alignment.scss';
-import './visibility.scss';
+import './floats.css';
+import './spacing.css';
+import './text-alignment.css';
+import './vertical-alignment.css';
+import './visibility.css';

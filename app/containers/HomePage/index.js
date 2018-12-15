@@ -24,7 +24,7 @@ import TableDemo from './TableDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-table' };
+  state = { activeTab: 'tab-modal' };
 
   render() {
     return (

@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import '../style/utilities/flexbox';
-import '../style/utilities/spacing.scss';
-import '../style/utilities/sizing/width.scss';
+// import '../style/utilities/flexbox';
+// import '../style/utilities/spacing.css';
+// import '../style/utilities/sizing/width.scss';
 import './style/Grid.scss';
 
 export const getDirection = ({ row, col, reverse }) => {

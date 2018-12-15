@@ -1,4 +1,5 @@
 @import '../../style/variables.scss';
+/* @import '../../style/animate/fadeInDown.scss'; */
 
 .rc-wrapped-modal {
   position: fixed;
@@ -15,6 +16,7 @@
   .rc-modal {
     top: 5em;
     max-height: calc(100vh - 10em);
-    max-width: calc(100vw - 5em)
+    max-width: calc(100vw - 5em);
+    animation: fadeInDown 0.25s ease-out;
   }
 }
