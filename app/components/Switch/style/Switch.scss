@@ -8,7 +8,7 @@ $border-width: 0.0625em;
 .rc-switch {
   font-size: $font-size;
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   width: $size * 2;
   height: $size;
 }
@@ -33,6 +33,8 @@ $border-width: 0.0625em;
 
   &:before {
     position: absolute;
+    top: 0;
+    left: 0;
     content: "";
     height: 1.5em;
     width: 1.5em;

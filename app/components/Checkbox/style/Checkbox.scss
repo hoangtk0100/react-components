@@ -11,7 +11,7 @@ $border-width: 0.125 * $perfect-number2;
 .rc-checkbox {
   font-size: $font-size;
   position: relative;
-  display: inline-flex;
+  display: flex;
   width: $size;
   height: $size;
 }

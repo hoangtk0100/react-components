@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -5,11 +6,29 @@ import cn from 'classnames';
 import Checkbox from '../Checkbox';
 
 import './style/Table.scss';
+// import '../style/utilities/text-alignment.scss';
+// import '../style/utilities/vertical-alignment.scss';
 
 export const aligns = Object.freeze({
-  left: 'rc-table--left',
-  right: 'rc-table--right',
-  center: 'rc-table--center',
+  left: 'text-left',
+  right: 'text-right',
+  center: 'text-center',
+  justify: 'text-justify',
+});
+
+export const verticals = Object.freeze({
+  middle: 'align-middle',
+  top: 'align-top',
+  bottom: 'align-bottom',
+  baseline: 'align-baseline',
+  'text-top': 'align-text-top',
+  'text-bottom': 'align-text-bottom',
+});
+
+export const borders = Object.freeze({
+  [true]: 'rc-table--bordered',
+  vertical: 'rc-table--vertical',
+  horizontal: 'rc-table--horizontal',
 });
 
 export default class Table extends React.Component {
@@ -21,55 +40,79 @@ export default class Table extends React.Component {
     return (
       <tr>
         {selectable && (
-          <td style={{ width: '1em', padding: 0, verticalAlign: 'middle' }}>
+          <td
+            style={{
+              width: '1em',
+              padding: '1em',
+              verticalAlign: 'middle',
+              textAlign: 'center',
+            }}
+          >
             <Checkbox />
           </td>
         )}
-        {columns.map(col => (
-          <td className={cn(col.className, aligns[col.align])}>{col.title}</td>
+        {columns.map((col, idx) => (
+          <td
+            key={col.index || idx}
+            className={cn(col.className, aligns[col.align])}
+          >
+            {col.title}
+          </td>
         ))}
       </tr>
     );
   };
 
   renderTableBody = () => {
-    const { columns, data, selectable } = this.props;
+    const { columns, data, vertical, selectable } = this.props;
 
-    return data.map((record, idx) => (
-      <tr>
+    return data.map((rowData, idxRow) => (
+      <tr key={idxRow}>
         {selectable && (
-          <td>
+          <td
+            style={{
+              padding: '1em',
+              verticalAlign: 'middle',
+              textAlign: 'center',
+            }}
+          >
             <Checkbox />
           </td>
         )}
-        {columns.map(col => (
+        {columns.map((col, idxCol) => (
           <td
+            key={col.index || idxCol}
             style={col.style}
-            className={cn(col.className, aligns[col.align])}
+            className={cn(
+              col.className,
+              aligns[col.align],
+              verticals[vertical],
+            )}
           >
-            {this.renderTD(col.render, record, idx, record[col.index])}
+            {this.renderTD(col.render, rowData, idxRow, rowData[col.index])}
           </td>
         ))}
       </tr>
     ));
   };
 
-  renderTD = (render, record, idx, value) => {
+  renderTD = (render, rowData, idxRow, value) => {
     if (typeof render === 'function') {
-      return render(record, idx);
+      return render(rowData, idxRow);
     }
 
     return value;
   };
 
   render() {
-    const { className, bordered } = this.props;
+    const { className, bordered, loading } = this.props;
 
     return (
       <table
         className={cn(
           'rc-table',
-          { 'rc-table--bordered': bordered },
+          borders[bordered],
+          { 'rc-table--loading': loading },
           className,
         )}
       >
@@ -91,10 +134,16 @@ Table.propTypes = {
     }),
   ).isRequired,
   data: PropTypes.array,
+  page: PropTypes.number,
+  pageSize: PropTypes.number,
+  loading: PropTypes.bool,
   className: PropTypes.string,
-  bordered: PropTypes.bool,
+  bordered: PropTypes.oneOf([true, 'vertical', 'horizontal']),
   selectable: PropTypes.bool,
+  vertical: PropTypes.oneOf(['middle', 'top', 'bottom']),
 };
 Table.defaultProps = {
   data: [],
+  page: 1,
+  pageSize: 10000, // large enought
 };

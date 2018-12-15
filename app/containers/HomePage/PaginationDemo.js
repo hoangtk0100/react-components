@@ -20,7 +20,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div>
-        <div className="flex mb-5">
+        <div className="flex mb-5 items-center">
           <Pagination.Total
             total={this.state.total2}
             page={this.state.current2}

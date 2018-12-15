@@ -1,6 +1,13 @@
 /* eslint-disable no-console, no-alert */
 import React from 'react';
-import { Table, Button, Pagination, Grid, Switch } from '../../components/core';
+import {
+  Table,
+  Button,
+  Pagination,
+  Grid,
+  Switch,
+  Icon,
+} from '../../components/core';
 
 const data = [
   {
@@ -146,7 +153,7 @@ class Demo extends React.Component {
     {
       title: 'Single?',
       index: 'single',
-      // render: record => <Switch checked={record.single} />,
+      render: record => <Switch checked={record.single} />,
     },
     {
       title: 'Age',
@@ -174,10 +181,25 @@ class Demo extends React.Component {
     },
     {
       title: 'Actions',
-      render: () => (
-        <Button size="small" color="error">
-          Remove
-        </Button>
+      style: { width: '80px' },
+      render: record => (
+        <div className="flex justify-center">
+          <Button
+            size="small"
+            color="error"
+            onClick={() => console.log(record)}
+          >
+            <Icon icon="trash" />
+          </Button>
+          <Button
+            className="ml-2"
+            size="small"
+            color="primary"
+            onClick={() => console.log(record)}
+          >
+            <Icon icon="edit" />
+          </Button>
+        </div>
       ),
     },
   ];
@@ -196,7 +218,14 @@ class Demo extends React.Component {
       <div>
         <div className="flex mb-2 p-5">
           <Grid col span="full">
-            <Table columns={this.columns} data={data} bordered selectable />
+            <Table
+              columns={this.columns}
+              data={data}
+              bordered="vertical"
+              selectable
+              vertical="middle"
+              loading
+            />
             <Grid row className="mt-2" justify="end">
               <Grid>
                 <Pagination.Total

@@ -89,11 +89,7 @@ export default class HomePage extends React.PureComponent {
           >
             <SelectDemo />
           </Tabs.Tab>
-          <Tabs.Tab
-            tab="tab-table"
-            title="Table"
-            icon={<Icon icon="mouse-pointer" />}
-          >
+          <Tabs.Tab tab="tab-table" title="Table" icon={<Icon icon="table" />}>
             <TableDemo />
           </Tabs.Tab>
         </Tabs>

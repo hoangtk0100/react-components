@@ -8,7 +8,7 @@ $perfect-number: 2.75;
 .rc-radio {
   font-size: $font-size;
   position: relative;
-  display: inline-flex;
+  display: flex;
   width: $size;
   height: $size;
 }
