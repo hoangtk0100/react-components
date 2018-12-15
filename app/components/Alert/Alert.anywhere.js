@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { omit, delay } from 'lodash/fp';
+import { omit } from 'lodash/fp';
 import ReactDOM from 'react-dom';
 
 import { canUseDOM } from '../utils';
@@ -72,13 +72,9 @@ export class AlertAnywhere extends React.Component {
 
     return (
       <Portal node={nodeRender} unmountCallback={this.unmountPortalCallback}>
-        <div className="rc-alert-anywhere">
+        <div className={cn('rc-alert-anywhere', placements[placement])}>
           <Alert
-            className={cn(
-              'rc-alert-anywhere',
-              placements[placement],
-              className,
-            )}
+            className={className}
             style={{ width: '300px', ...style }}
             {...otherProps}
             onClose={this.closeAlert}

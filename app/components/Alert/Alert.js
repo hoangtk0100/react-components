@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import { omit } from 'lodash/fp';
 
 import Icon from '../Icon';
 import './style/Alert.scss';
@@ -57,7 +58,7 @@ class Alert extends React.PureComponent {
       closable,
       isHideIcon,
       ...otherProps
-    } = this.props;
+    } = omit(['duration'])(this.props);
 
     return (
       <div
@@ -101,7 +102,7 @@ Alert.propTypes = {
 };
 Alert.defaultProps = {
   type: 'info',
-  duration: 2000,
+  duration: 0,
   closable: true,
   onClose: f => f,
 };

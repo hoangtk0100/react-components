@@ -1,15 +1,18 @@
 @import '../../style/variables.scss';
-/* @import '../../style/animate/shake.scss'; */
+// @import '../../style/animate/bounceInDown.css';
+// @import '../../style/animate/bounceInUp.css';
+// @import '../../style/animate/bounceInLeft.css';
+// @import '../../style/animate/bounceInRight.css';
 
 $anywhere-spacing: 20px;
+$duration: 0.25s;
 
 .rc-alert-anywhere {
   position: fixed;
-  box-shadow: $box-shadow;
-}
 
-.rc-alert-anywhere .rc-alert {
-  animation: shake 1s ease-in;
+  .rc-alert {
+    box-shadow: $box-shadow;
+  }
 }
 
 .rc-alert-anywhere--top,
@@ -62,4 +65,32 @@ $anywhere-spacing: 20px;
 .rc-alert-anywhere--right-top {
   top: $anywhere-spacing;
   right: $anywhere-spacing;
+}
+
+.rc-alert-anywhere--top .rc-alert {
+  animation: bounceInDown $duration ease-in;
+}
+
+.rc-alert-anywhere--bottom .rc-alert {
+  animation: bounceInUp $duration ease-in;
+}
+
+.rc-alert-anywhere--left,
+.rc-alert-anywhere--left-top,
+.rc-alert-anywhere--top-left,
+.rc-alert-anywhere--left-bottom,
+.rc-alert-anywhere--bottom-left {
+  .rc-alert {
+    animation: bounceInLeft $duration ease-in;
+  }
+}
+
+.rc-alert-anywhere--right,
+.rc-alert-anywhere--top-right,
+.rc-alert-anywhere--right-top,
+.rc-alert-anywhere--bottom-right,
+.rc-alert-anywhere--right-bottom {
+  .rc-alert {
+    animation: bounceInRight $duration ease-in;
+  }
 }

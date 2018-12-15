@@ -1,6 +1,9 @@
 /* https://raw.githubusercontent.com/daneden/animate.css/master/animate.css */
 
 import './bounceInDown.css';
+import './bounceInUp.css';
+import './bounceInLeft.css';
+import './bounceInRight.css';
 import './rotateIn.css';
 import './fadeInDown.css';
 import './fadeInUp.css';
