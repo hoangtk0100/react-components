@@ -1,7 +1,6 @@
 /* eslint-disable consistent-return */
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import { omit } from 'lodash/fp';
 import ReactDOM from 'react-dom';
 

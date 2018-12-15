@@ -8,6 +8,11 @@ class Demo extends React.Component {
     return (
       <div>
         <div className="flex mb-2">
+          <Button onClick color="primary" onClick={() => Alert.clean()}>
+            Clean All Alert
+          </Button>
+        </div>
+        <div className="flex mb-2">
           <Button
             color="success"
             onClick={() =>
