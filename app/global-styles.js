@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Lora', serif;
+    /* font-family: 'Lora', serif; */
   }
 
   body.fontLoaded {

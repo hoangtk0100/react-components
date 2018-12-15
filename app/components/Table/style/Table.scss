@@ -4,6 +4,8 @@ $font-size: $font-size;
 $background-color-for-thead: #d9d9d9;
 $padding: 1.5em;
 $border-color: #e9e9e9;
+$background-color-when-hover: lighten($primary, 10%);
+$text-color-when-hover: #ffffff;
 
 .rc-table {
   font-size: $font-size;
@@ -14,7 +16,7 @@ $border-color: #e9e9e9;
   > thead {
     tr {
       background-color: $background-color-for-thead;
-      font-weight: 500;
+      font-weight: 600;
 
       td {
         padding: 1em;
@@ -28,6 +30,14 @@ $border-color: #e9e9e9;
     > tr {
       > td {
         padding: 0.5em 0.75em;
+        transition: 0.3s;
+        font-weight: 400;
+
+        &:hover {
+          background-color: $background-color-when-hover;
+          color: $text-color-when-hover;
+          box-shadow: $box-shadow;
+        }
       }
     }
     

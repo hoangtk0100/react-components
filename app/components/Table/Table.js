@@ -38,11 +38,9 @@ export default class Table extends React.Component {
     return data.map((record, idx) => (
       <tr>
         {selectable && (
-          <tr>
-            <td>
-              <Checkbox />
-            </td>
-          </tr>
+          <td>
+            <Checkbox />
+          </td>
         )}
         {columns.map(col => (
           <td
