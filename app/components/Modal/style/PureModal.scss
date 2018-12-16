@@ -30,6 +30,10 @@
 .rc-modal__content {
   flex-grow: 1;
   overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .rc-modal__title,

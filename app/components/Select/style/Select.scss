@@ -97,6 +97,10 @@
   overflow: scroll;
   max-height: 30rem;
   border-radius: $border-radius;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .rc-select--dropdown-visible {
