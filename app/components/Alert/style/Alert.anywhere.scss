@@ -10,7 +10,7 @@ $margin: 0.25em;
 
 .rc-alert-anywhere {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column-reverse wrap;
   position: fixed;
 
   .rc-alert {
