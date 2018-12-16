@@ -22,29 +22,30 @@ $border-radius: 0;
   background-color: white;
   cursor: pointer;
   border-radius: $border-radius;
-  border: 0.0625em solid $border-color;
+  border: $border-width solid $border-color;
   border-right-width: 0;
   user-select: none;
-  min-width: $height;
+  min-width: $height * 0.85;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
   text-decoration: none;
+  transition: 0.4s;
 
   &:hover {
     color: $primary;
   }
 
   &:first-child {
-    border-left-width: 0.0625em;
+    border-left-width: $border-width;
     border-top-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em 
   }
 
   &:last-child {
-    border-right-width: 0.0625em;
+    border-right-width: $border-width;
     border-top-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em 
   }
@@ -60,7 +61,7 @@ $border-radius: 0;
   border-color: $primary;
   background-color: $primary;
   color: white;
-  box-shadow: 0 0.0625em 0 $primary, 0 -0.0625em 0 $primary;
+  box-shadow: 0 0.125em 0 $primary, 0 -0.125em 0 $primary;
 
   + .rc-pagination__item {
     border-left-width: 0;
