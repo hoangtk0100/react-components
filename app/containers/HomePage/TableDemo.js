@@ -224,7 +224,6 @@ class Demo extends React.Component {
               bordered="vertical"
               selectable
               vertical="middle"
-              loading
             />
             <Grid row className="mt-2" justify="end">
               <Grid>

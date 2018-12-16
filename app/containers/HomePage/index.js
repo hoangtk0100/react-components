@@ -25,7 +25,7 @@ import AvatarDemo from './AvatarDemo';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
-  state = { activeTab: 'tab-avatar' };
+  state = { activeTab: 'tab-button' };
 
   render() {
     return (
