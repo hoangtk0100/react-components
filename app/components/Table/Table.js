@@ -134,8 +134,8 @@ Table.propTypes = {
     }),
   ).isRequired,
   data: PropTypes.array,
-  page: PropTypes.number,
-  pageSize: PropTypes.number,
+  // page: PropTypes.number,
+  // pageSize: PropTypes.number,
   loading: PropTypes.bool,
   className: PropTypes.string,
   bordered: PropTypes.oneOf([true, 'vertical', 'horizontal']),
@@ -144,6 +144,6 @@ Table.propTypes = {
 };
 Table.defaultProps = {
   data: [],
-  page: 1,
-  pageSize: 10000, // large enought
+  // page: 1,
+  // pageSize: 10000, // large enought
 };

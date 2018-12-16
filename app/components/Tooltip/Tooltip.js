@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { isString } from 'lodash/fp';
 
 import './style/Tooltip.scss';
 
@@ -31,7 +30,7 @@ Tooltip.propTypes = {
   placement: PropTypes.oneOf(Object.keys(placements)),
   className: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  children: PropTypes.node,
+  // children: PropTypes.node,
 };
 Tooltip.defaultProps = {
   placement: 'top',

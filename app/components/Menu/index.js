@@ -1,7 +1,7 @@
 import Menu from './Menu';
-import MenuItem from './MenuItem';
-import MenuItemGroup from './MenuItemGroup';
-import SubMenu from './SubMenu';
+import MenuItem from './Menu.Item';
+import MenuItemGroup from './Menu.GroupItem';
+import SubMenu from './Menu.Sub';
 
 Menu.Item = MenuItem;
 Menu.Sub = SubMenu;
