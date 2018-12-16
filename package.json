@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.7.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "react-components",
+  "version": "0.0.1",
+  "description": "Flexible React Components",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/nguyenvanhoang26041994/react-components.git"
   },
   "engines": {
     "npm": ">=5",
     "node": ">=8.10.0"
   },
-  "author": "Max Stoiber",
+  "author": "Hoang Nguyen",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
