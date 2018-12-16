@@ -1,6 +1,12 @@
 /* eslint-disable no-console, no-alert */
 import React from 'react';
-import { Input, Button, Textarea, Grid, Tag } from '../../components/core';
+import {
+  InputNative as Input,
+  Button,
+  Textarea,
+  Grid,
+  Tag,
+} from '../../components/core';
 
 class Demo extends React.Component {
   state = { value: '' };
@@ -47,11 +53,6 @@ class Demo extends React.Component {
             Button
           </Button>
         </Grid>
-        {/* <div className="flex mb-2 items-end">
-          <Textbox size="small" placeholder="Placeholder" />
-          <Textbox placeholder="Placeholder" className="ml-1" />
-          <Textbox size="large" className="ml-1" placeholder="Placeholder" />
-        </div> */}
         <div className="flex mb-2 items-end">
           <Textarea placeholder="Placeholder" />
         </div>
